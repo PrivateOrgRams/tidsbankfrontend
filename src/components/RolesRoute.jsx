@@ -8,7 +8,6 @@ const RolesRoute = ({ roles, children, ...rest }) => (
     {UserService.hasRole(roles) ? children : <NotAllowed/>}
   </Route>
 )
-
 RolesRoute.propTypes = {
   roles: PropTypes.arrayOf(PropTypes.string).isRequired,
 }

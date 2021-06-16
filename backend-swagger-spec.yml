@@ -1,46 +1,46 @@
 swagger: "2.0"
 info:
   version: "1.0.0"
-  title: "Book Box Demo Service"
+  title: "User Box Demo Service"
   contact:
-    email: "niko@n-k.de"
+    email: "b@b.com"
   license:
     name: "MIT"
     url: "https://opensource.org/licenses/MIT"
 host: "localhost"
 basePath: "/"
 tags:
-- name: "books"
-  description: "Your BookBox"
+- name: "Users"
+  description: "Your UserBox"
 schemes:
 - "http"
 paths:
-  /books:
+  /Users:
     get:
       tags:
-      - "books"
-      summary: "Get all books from the box"
-      operationId: "getAllBooks"
+      - "Users"
+      summary: "Get all Users from the box"
+      operationId: "getAllUsers"
       security:
       - oauth2: [global]
       produces:
       - "application/json"
       responses:
         200:
-          description: "list of all books"
+          description: "list of all Users"
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Book"
+              $ref: "#/definitions/User"
     post:
       tags:
-      - "books"
-      summary: "Add a new book to the box"
-      operationId: "addNewBook"
+      - "Users"
+      summary: "Add a new User to the box"
+      operationId: "addNewUser"
       parameters:
       - in: "body"
         name: "body"
-        description: "Book object that needs to be added to the box"
+        description: "User object that needs to be added to the box"
         required: true
         schema:
           type: "object"
@@ -55,19 +55,19 @@ paths:
       - "application/json"
       responses:
         201:
-          description: "Book was created"
+          description: "User was created"
         400:
-          description: "Book object format mismatch"
-  /books/{bookId}:
+          description: "User object format mismatch"
+  /Users/{UserId}:
     get:
       tags:
-      - "books"
-      summary: "Get book by id"
-      operationId: "getBookById"
+      - "Users"
+      summary: "Get User by id"
+      operationId: "getUserById"
       parameters:
-      - name: "bookId"
+      - name: "UserId"
         in: "path"
-        description: "ID of the book to return"
+        description: "ID of the User to return"
         required: true
         type: "integer"
         format: "int32"
@@ -79,20 +79,20 @@ paths:
         200:
           description: "OK"
           schema:
-            $ref: "#/definitions/Book"
+            $ref: "#/definitions/User"
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Book not found"
+          description: "User not found"
     delete:
       tags:
-      - "books"
-      summary: "Delete book by id"
-      operationId: "deleteBookById"
+      - "Users"
+      summary: "Delete User by id"
+      operationId: "deleteUserById"
       parameters:
-      - name: "bookId"
+      - name: "UserId"
         in: "path"
-        description: "ID of the book to delete"
+        description: "ID of the User to delete"
         required: true
         type: "integer"
         format: "int32"
@@ -100,21 +100,21 @@ paths:
       - oauth2: [global]
       responses:
         204:
-          description: "Book has been successfully removed from box"
+          description: "User has been successfully removed from box"
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Book not found"
+          description: "User not found"
 securityDefinitions:
   oauth2:
     type: "oauth2"
-    authorizationUrl: "http://localhost:8080/auth/realms/demo/protocol/openid-connect/auth"
-    tokenUrl: "http://localhost:8080/auth/realms/demo/protocol/openid-connect/token"
+    authorizationUrl: "http://localhost:8083/auth/realms/Tidsbanken/protocol/openid-connect/auth"
+    tokenUrl: "http://localhost:8083/auth/realms/Tidsbanken/protocol/openid-connect/token"
     flow: "accessCode"
     scopes:
       global: "global"
 definitions:
-  Book:
+  User:
     type: "object"
     properties:
       id:

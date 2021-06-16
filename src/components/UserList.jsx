@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { allUsers, deleteUser } from "../modules/users";
+import RolesRoute from "./RolesRoute";
 
 const UserList = () => {
 
@@ -34,9 +35,11 @@ const UserList = () => {
               </td>
               <td>{user.lastName}</td>
               <td>
-                <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteUser(user))}>
+                <RolesRoute  roles={['admin']}>
+                <button  className="btn btn-xs btn-danger" onClick={() => dispatch(deleteUser(user))}>
                   Delete User
                 </button>
+                </RolesRoute>
               </td>
             </tr>
           ))}

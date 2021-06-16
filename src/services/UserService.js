@@ -22,7 +22,6 @@ const initKeycloak = (onAuthenticatedCallback) => {
     })
 };
 const doLogin = _kc.login;
-
 const doLogout = _kc.logout;
 const getToken = () => _kc.token;
 const isLoggedIn = () => !!_kc.token;
@@ -34,9 +33,9 @@ const updateToken = (successCallback) =>
 
 const getUsername = () => _kc.tokenParsed?.preferred_username;
 const getAccess = () => _kc.tokenParsed?.access_token;
+const getAccesss = () => _kc.tokenParsed?.given_name;
 
 const hasRole = (roles) => roles.some((role) => _kc.hasRealmRole(role));
-
 const UserService = {
   initKeycloak,
   doLogin,
@@ -46,8 +45,11 @@ const UserService = {
   updateToken,
   getUsername,
   hasRole,
-  getAccess
-  
+  getAccess,
+  getAccesss
+
+
+
 };
 ////////////////////////////////////////////////////////////////
 

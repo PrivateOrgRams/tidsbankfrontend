@@ -8,7 +8,7 @@ const DELETE_USER = 'DELETE_USER';
 
 const usersReducer = (state = [], action) => {
   switch (action.type) {
-    
+
     case LIST_USERS + SUCCESS_SUFFIX:
       return action.payload.data;
 
@@ -27,21 +27,17 @@ export const allUsers = () => ({
   type: LIST_USERS,
   payload: {
     request: {
-     // url: '/demo/books',
-      //url: 'http://127.0.0.1:90/api/users',
       url: 'https://localhost:5001/api/Users',
-    
+
     },
   },
 });
-
 export const addUser = user => {
   console.log(`${UserService.getUsername()} added the user ${user.id}`);
   return {
     type: ADD_USER,
     payload: {
       request: {
-      // url: 'https://localhost:5001/api/Users',
         url: 'https://localhost:5001/api/Users',
         method: HttpService.HttpMethods.POST,
         data: user,
@@ -68,10 +64,8 @@ export const changes = () => ({
   type: LIST_USERS,
   payload: {
     request: {
-     // url: '/demo/books',
-      //url: 'http://127.0.0.1:90/api/users',
       url: 'https://localhost:5001/api/Users',
-    
+
     },
   },
 });

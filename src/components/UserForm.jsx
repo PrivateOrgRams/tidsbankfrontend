@@ -30,10 +30,15 @@ const UserForm = () => {
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
           <h1>Add New User:</h1>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="id">id</label>
             <input type="text" className="form-control" placeholder="id"
                    value={Id} onChange={(e) => setId(e.target.value)}/>
+          </div> */}
+          <div className="form-group">
+            <label htmlFor="id">id</label>
+            <input type="text" className="form-control" placeholder="id"
+                   value={Id} onChange={(e) => setId(Math.random().toString(36).substring(2))}/>
           </div>
           <div className="form-group">
             <label htmlFor="FirstName">First name</label>
