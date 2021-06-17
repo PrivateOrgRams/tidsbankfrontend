@@ -36,6 +36,7 @@ export const allUsers = () => ({
     },
 });
 
+//Post method
 export const addIneligibleperiod = ineligibleperiod => {
     console.log(`${UserService.getUsername()} added the ineligibleperiod ${ineligibleperiod.id}`);
     return {
