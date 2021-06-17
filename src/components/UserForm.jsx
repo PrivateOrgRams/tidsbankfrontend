@@ -76,7 +76,7 @@ const UserForm = () => {
             <button type="submit" className="btn btn-primary">Add book</button>
           </RenderOnRole>
         </form>
-        <h1>{UserService.admin()}</h1>
+        { UserService.hasRole(["admin"]) && <h1>I'm an Admin</h1> }
       </div>
     </div>
   );

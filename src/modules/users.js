@@ -2,9 +2,9 @@ import { SUCCESS_SUFFIX } from "redux-axios-middleware";
 import HttpService from "../services/HttpService";
 import UserService from "../services/UserService";
 
-const LIST_USERS = 'LIST_USERS';
-const ADD_USER = 'ADD_USER';
-const DELETE_USER = 'DELETE_USER';
+export const LIST_USERS = 'LIST_USERS';
+export const ADD_USER = 'ADD_USER';
+export const DELETE_USER = 'DELETE_USER';
 
 const usersReducer = (state = [], action) => {
   switch (action.type) {

@@ -72,7 +72,7 @@ export const changes = () => ({
     payload: {
       request: {
         url: 'https://localhost:5001/Settings',
-  
+
       },
     },
   });

@@ -25,12 +25,12 @@ const ineligibleperiodReducer = (state = [], action) => {
 
 export default ineligibleperiodReducer;
 
-export const allUsers = () => ({
+export const allIneligiblePeriod = () => ({
 
     type: LIST_INELIGIBLEPERIODS,
     payload: {
         request: {
-            url: 'https://localhost:5001/ineligible',
+            url: 'https://localhost:5001/api/IneligiblePeriods',
 
         },
     },
@@ -43,7 +43,7 @@ export const addIneligibleperiod = ineligibleperiod => {
         type: ADD_INELIGIBLEPERIOD,
         payload: {
             request: {
-                url: 'https://localhost:5001/ineligible',
+                url: 'https://localhost:5001/api/IneligiblePeriods',
                 method: HttpService.HttpMethods.POST,
                 data: ineligibleperiod,
             },
@@ -58,7 +58,7 @@ export const deleteIneligibleperiod = ineligibleperiod => {
         payload: {
             ineligibleperiod,
             request: {
-                url: `https://localhost:5001/ineligible/${ineligibleperiod.id}`,
+                url: `https://localhost:5001/api/IneligiblePeriods/${ineligibleperiod.id}`,
                 method: HttpService.HttpMethods.DELETE,
             },
         },
@@ -72,8 +72,7 @@ export const changes = () => ({
     payload: {
       request: {
         url: 'https://localhost:5001/ineligible',
-  
+
       },
     },
   });
-  

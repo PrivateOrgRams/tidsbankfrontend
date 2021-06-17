@@ -30,7 +30,17 @@
     "redux": "^4.0.4",
     "redux-axios-middleware": "^4.0.1",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "date-fns": "^2.22.1",
+    "helmet": "^4.6.0",
+    "react-day-picker": "^7.4.10",
+    "react-fetch-hook": "^1.8.5",
+    "react-helmet": "^6.1.0",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
   },
   "browserslist": [
     ">0.2%",
