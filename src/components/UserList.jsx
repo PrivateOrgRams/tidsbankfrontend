@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { allUsers, deleteUser } from "../modules/users";
-import RolesRoute from "./RolesRoute";
+
 
 const UserList = () => {
 
@@ -20,10 +20,15 @@ const UserList = () => {
         <table className="table table-striped">
           <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
+            <th>id</th>
+            <th>FirstName</th>
             <th>Last Name</th>
-            <th>Action</th>
+            <th>isAdmin</th>
+            <th>Email</th>
+            <th>Picture</th>
+            
+
+
           </tr>
           </thead>
           <tbody>
@@ -31,15 +36,24 @@ const UserList = () => {
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>
-                <Link to={`/users/${user.id}`}>{user.firstName}</Link>
-              </td>
-              <td>{user.lastName}</td>
+                {/*<Link to={`/users/${user.id}`}>{user.firstName}</Link>*/}
+                <Link to={`/users/${user.id}`}>{user.firstName} {user.Name}</Link>
+              </td>            
               <td>
-                <RolesRoute  roles={['admin']}>
-                <button  className="btn btn-xs btn-danger" onClick={() => dispatch(deleteUser(user))}>
+              <Link to={`/users/${user.id}`}>{`${user.lastName}`}</Link>
+              </td>
+              <td>
+              <Link to={`/users/${user.id}`}>{`${user.isAdmin}`}</Link>
+              </td>
+              <td>
+              <Link to={`/users/${user.id}`}>{`${user.email}`}</Link>
+              </td>
+              <td>
+              <Link to={`/users/${user.id}`}>{`${user.picture}`}</Link>
+              <button  className="btn btn-xs btn-danger" onClick={() => dispatch(deleteUser(user))}>
                   Delete User
                 </button>
-                </RolesRoute>
+
               </td>
             </tr>
           ))}

@@ -27,18 +27,18 @@ export const allUsers = () => ({
   type: LIST_USERS,
   payload: {
     request: {
-      url: 'https://localhost:5001/api/Users',
+      url: 'https://localhost:5001/user/all',
 
     },
   },
 });
-export const addUser = user => {
+export const addUser = user => {console.log(user.id)
   console.log(`${UserService.getUsername()} added the user ${user.id}`);
   return {
     type: ADD_USER,
     payload: {
       request: {
-        url: 'https://localhost:5001/api/Users',
+        url: 'https://localhost:5001/user',
         method: HttpService.HttpMethods.POST,
         data: user,
       },
