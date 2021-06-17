@@ -65,10 +65,10 @@ export const deleteRequest = request => {
 ////////////////////////////////////////////////////////////////
 export const changes = () => ({
 
-    type: LIST_USERS,
+    type: LIST_REQUESTS,
     payload: {
       request: {
-        url: 'https://localhost:5001/api/Users',
+        url: 'https://localhost:5001/Requests',
   
       },
     },

@@ -35,19 +35,21 @@ export const allUsers = () => ({
         },
     },
 });
+
 export const addSetting = setting => {
     console.log(`${UserService.getUsername()} added the setting ${setting.id}`);
     return {
         type: ADD_SETTING,
         payload: {
             request: {
-                url: 'https://localhost:5001/Settings',
+                url: 'C',
                 method: HttpService.HttpMethods.POST,
                 data: setting,
             },
         },
     }
 };
+
 export const deleteSetting = setting => {
     console.log(`${UserService.getUsername()} deletes the comment ${comment.id}`);
     return {
@@ -61,3 +63,16 @@ export const deleteSetting = setting => {
         },
     }
 };
+
+////////////////////////////////////////////////////////////////
+
+export const changes = () => ({
+
+    type: LIST_SETTINGS,
+    payload: {
+      request: {
+        url: 'https://localhost:5001/Settings',
+  
+      },
+    },
+  });

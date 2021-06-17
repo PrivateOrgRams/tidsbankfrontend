@@ -66,10 +66,10 @@ export const deleteComment = comment => {
 ////////////////////////////////////////////////////////////////
 export const changes = () => ({
 
-    type: LIST_USERS,
+    type: LIST_COMMENTS,
     payload: {
       request: {
-        url: 'https://localhost:5001/api/Users',
+        url: 'https://localhost:5001/comment',
   
       },
     },

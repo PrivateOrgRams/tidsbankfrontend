@@ -68,10 +68,10 @@ export const deleteIneligibleperiod = ineligibleperiod => {
 ////////////////////////////////////////////////////////////////
 export const changes = () => ({
 
-    type: LIST_USERS,
+    type: LIST_INELIGIBLEPERIODS,
     payload: {
       request: {
-        url: 'https://localhost:5001/api/Users',
+        url: 'https://localhost:5001/ineligible',
   
       },
     },
