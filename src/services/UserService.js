@@ -33,7 +33,11 @@ const updateToken = (successCallback) =>
 
 const getUsername = () => _kc.tokenParsed?.preferred_username;
 const getAccess = () => _kc.tokenParsed?.access_token;
-const getAccesss = () => _kc.tokenParsed?.given_name;
+const getGivenName = () => _kc.tokenParsed?.given_name;
+const getGivenFName = () => _kc.tokenParsed?.family_name;
+const email = () => _kc.tokenParsed?.email;
+const admin = () => _kc.tokenParsed?.roles;
+
 
 const hasRole = (roles) => roles.some((role) => _kc.hasRealmRole(role));
 const UserService = {
@@ -46,7 +50,12 @@ const UserService = {
   getUsername,
   hasRole,
   getAccess,
-  getAccesss
+  getGivenName,
+  getGivenFName,
+  email,
+  admin
+
+
 
 
 
