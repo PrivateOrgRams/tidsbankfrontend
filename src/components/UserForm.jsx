@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { addUser } from "../modules/users";
 import RenderOnRole from "./RenderOnRole";
+import UserService from "../services/UserService";
 
 const UserForm = () => {
   const [Id, setId] = useState('');
@@ -38,17 +39,17 @@ const UserForm = () => {
           <div className="form-group">
             <label htmlFor="id">id</label>
             <input type="text" className="form-control" placeholder="id"
-                   value={Id} onChange={(e) => setId(Math.random().toString(36).substring(2))}/>
+                   value={Id} onChange={(e) => setId(UserService.getUsername())}/>
           </div>
           <div className="form-group">
             <label htmlFor="FirstName">First name</label>
             <input type="text" className="form-control" placeholder="First name"
-                   value={FirstName} onChange={(e) => setFirstName(e.target.value)}/>
+                   value={FirstName} onChange={(e) => setFirstName(UserService.getGivenName())}/>
           </div>
           <div className="form-group">
             <label htmlFor="setLastName">Last Name</label>
             <input type="text" className="form-control" placeholder="Last Name"
-                   value={LastName} onChange={(e) => setLastName(e.target.value)}/>
+                   value={LastName} onChange={(e) => setLastName(UserService.getGivenFName())}/>
           </div>
           {/* <div className="form-group">
             <label htmlFor="Picture">Picture</label>
@@ -58,7 +59,7 @@ const UserForm = () => {
           <div className="form-group">
             <label htmlFor="Email">Email</label>
             <input type="text" className="form-control" placeholder="Email"
-                   value={Email} onChange={(e) => setEmail(e.target.value)}/>
+                   value={Email} onChange={(e) => setEmail(UserService.email())}/>
           </div>
 
           <div className="form-group">
@@ -75,6 +76,7 @@ const UserForm = () => {
             <button type="submit" className="btn btn-primary">Add book</button>
           </RenderOnRole>
         </form>
+        <h1>{UserService.admin()}</h1>
       </div>
     </div>
   );
