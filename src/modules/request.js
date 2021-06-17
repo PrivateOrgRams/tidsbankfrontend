@@ -2,66 +2,65 @@ import { SUCCESS_SUFFIX } from "redux-axios-middleware";
 import HttpService from "../services/HttpService";
 import UserService from "../services/UserService";
 
-const LIST_COMMENTS = 'LIST_COMMENTS';
+const LIST_REQUESTS = 'LIST_REQUESTS';
 //const EDIT_COMMENT = 'EDIT_COMMENT';
-const ADD_COMMENT = 'ADD_COMMENT';
-const DELETE_COMMENT = 'DELETE_COMMENT';
+const ADD_REQUEST = 'ADD_REQUEST';
+const DELETE_REQUEST = 'DELETE_REQUEST';
 //const SINGLE_COMMENT = 'SINGLE_COMMENT';
 
 
-const commentReducer = (state = [], action) => {
+const RequestReducer = (state = [], action) => {
     switch (action.type) {
 
-        case LIST_COMMENTS + SUCCESS_SUFFIX:
+        case LIST_REQUESTS + SUCCESS_SUFFIX:
             return action.payload.data;
 
-        case DELETE_COMMENT:
-            return state.filter((comment) => comment.id !== action.payload.comment.id);
+        case DELETE_REQUEST:
+            return state.filter((request) => request.id !== action.payload.request.id);
 
         default:
             return state;
     }
 };
 
-export default commentReducer;
+export default requestReducer;
 
 export const allUsers = () => ({
 
-    type: LIST_COMMENTS,
+    type: LIST_REQUESTS,
     payload: {
         request: {
-            url: 'https://localhost:5001/comment',
+            url: 'https://localhost:5001/Requests',
 
         },
     },
 });
-export const addComment = comment => {
-    console.log(`${UserService.getUsername()} added the comment ${comment.id}`);
+export const addRequest = request => {
+    console.log(`${UserService.getUsername()} added the request ${request.id}`);
     return {
-        type: ADD_COMMENT,
+        type: ADD_REQUEST,
         payload: {
             request: {
-                url: 'https://localhost:5001/comment',
+                url: 'https://localhost:5001/Requests',
                 method: HttpService.HttpMethods.POST,
-                data: comment,
+                data: request,
             },
         },
     }
 };
-export const deleteComment = comment => {
-    console.log(`${UserService.getUsername()} deletes the comment ${comment.id}`);
+export const deleteRequest = request => {
+    console.log(`${UserService.getUsername()} deletes the request ${request.id}`);
     return {
-        type: DELETE_COMMENT,
+        type: DELETE_REQUEST,
         payload: {
-            comment,
+            request,
             request: {
-                url: `https://localhost:5001/comment/${comment.id}`,
+                url: `https://localhost:5001/Requests/${request.id}`,
                 method: HttpService.HttpMethods.DELETE,
             },
         },
     }
 };
-
 
 ////////////////////////////////////////////////////////////////
 export const changes = () => ({
