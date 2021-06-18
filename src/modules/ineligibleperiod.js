@@ -30,7 +30,7 @@ export const allIneligiblePeriod = () => ({
     type: LIST_INELIGIBLEPERIODS,
     payload: {
         request: {
-            url: 'https://localhost:5001/api/IneligiblePeriods',
+            url: 'https://localhost:5001/ineligible',
 
         },
     },
@@ -43,7 +43,7 @@ export const addIneligibleperiod = ineligibleperiod => {
         type: ADD_INELIGIBLEPERIOD,
         payload: {
             request: {
-                url: 'https://localhost:5001/api/IneligiblePeriods',
+                url: 'https://localhost:5001/ineligible',
                 method: HttpService.HttpMethods.POST,
                 data: ineligibleperiod,
             },
@@ -58,7 +58,7 @@ export const deleteIneligibleperiod = ineligibleperiod => {
         payload: {
             ineligibleperiod,
             request: {
-                url: `https://localhost:5001/api/IneligiblePeriods/${ineligibleperiod.id}`,
+                url: `https://localhost:5001/ineligible/${ineligibleperiod.id}`,
                 method: HttpService.HttpMethods.DELETE,
             },
         },
