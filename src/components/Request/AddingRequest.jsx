@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
-import { addIneligibleperiod } from "../../modules/ineligibleperiod";
-import RenderOnRole from "../RenderOnRole";
-//import UserService from '../../services/UserService';
+import { addRequest } from "../../modules/requests";
+import UserService from '../../services/UserService';
 
-const AddInigiblP = () => {
-
+const AddingRequest = () => {
+  const [title, setTitle] = useState('');
   const [start, setStrart] = useState('');
   const [end, setEnd] = useState('');
+  const [userId, setUserId] = useState('');
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -18,7 +18,7 @@ const AddInigiblP = () => {
     if (!start || !end) {
       return;
     }
-    dispatch(addIneligibleperiod({ start:start, end: end}))
+    dispatch(addRequest({title: title, start:start, end: end , userId: userId}))
       .then(() => history.push("/"))
   };
 
@@ -26,11 +26,19 @@ const AddInigiblP = () => {
     <div className="row">
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
-          <h1>Ineligible period</h1>
-
+          <h1>Add add Ineligible period</h1>
+          <h1></h1>
+          <div className="form-group">
+            <input  type="text"  className="form-control" placeholder="start"
+                   value={title} onChange={(e) => setTitle(UserService.getUsername())}/>
+          </div>
+          <div className="form-group">
+            <input  type="text" className="form-control" placeholder="name"
+                   value={userId} onChange={(e) => setUserId(UserService.getGivenName())}/>
+          </div>
           <div className="form-group">
             <label htmlFor="start">start</label>
-            <input type="Date" className="form-control" placeholder="start"
+            <input visible="false" type="Date" className="form-control" placeholder="start"
                    value={start} onChange={(e) => setStrart(e.target.value)}/>
           </div>
           <div className="form-group">
@@ -38,9 +46,7 @@ const AddInigiblP = () => {
             <input type="Date" className="form-control" placeholder="end"
                    value={end} onChange={(e) => setEnd(e.target.value)}/>
           </div>
-          <RenderOnRole roles={['user']}>
-            <button type="submit" className="btn btn-primary">Add Ineligible Period</button>
-          </RenderOnRole>
+            <button type="submit" className="btn btn-primary">Vocation Request</button>
         </form>
         {/* { UserService.hasRole(["admin"]) && <h1>I'm an Admin</h1> } */}
       </div>
@@ -48,4 +54,4 @@ const AddInigiblP = () => {
   );
 }
 
-export default AddInigiblP
+export default AddingRequest

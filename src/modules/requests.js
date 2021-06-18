@@ -9,7 +9,7 @@ const DELETE_REQUEST = 'DELETE_REQUEST';
 //const SINGLE_COMMENT = 'SINGLE_COMMENT';
 
 
-const RequestReducer = (state = [], action) => {
+const requestReducer = (state = [], action) => {
     switch (action.type) {
 
         case LIST_REQUESTS + SUCCESS_SUFFIX:
@@ -23,7 +23,7 @@ const RequestReducer = (state = [], action) => {
     }
 };
 
-export default RequestReducer;
+export default requestReducer;
 
 export const allRequests = () => ({
 

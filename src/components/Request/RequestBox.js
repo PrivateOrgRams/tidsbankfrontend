@@ -3,7 +3,10 @@ import Menu from "../Menu";
 import NoMatch from "../NoMatch";
 import RolesRoute from "../RolesRoute";
 import ListOfRequests from "./ListOfRequests";
-import RequestDetail from './RequestDetails';
+import RequestDetails from './RequestDetails';
+import AddingRequest from './AddingRequest';
+import Ineligibleperiod from './Ineligibleperiod';
+
 
 
 const RequestBox = () => (
@@ -11,10 +14,12 @@ const RequestBox = () => (
     <Menu/>
     <Switch>
       <Route exact path="/">
+      <Ineligibleperiod/>
+      <AddingRequest/>
       <ListOfRequests/>
       </Route>
       <Route path="/requests/:requestId">
-      <RequestDetail/>
+      <RequestDetails/>
       </Route>
       <RolesRoute path="/secret" roles={['admin']}>
 

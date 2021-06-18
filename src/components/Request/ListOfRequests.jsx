@@ -8,7 +8,7 @@ import RolesRoute from "../RolesRoute";
 const ListOfRequests = () => {
 
   const dispatch = useDispatch();
-  const { request } = useSelector((state) => state);
+  const { requests } = useSelector((state) => state);
 
   useEffect(() => {
     dispatch(allRequests());
@@ -30,7 +30,7 @@ const ListOfRequests = () => {
           </tr>
           </thead>
           <tbody>
-          {request.map((req) => (
+          {requests.map((req) => (
             <tr key={req.id}>
             <td>{req.id}</td>
               <td>
