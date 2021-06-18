@@ -23,9 +23,9 @@ const RequestReducer = (state = [], action) => {
     }
 };
 
-export default requestReducer;
+export default RequestReducer;
 
-export const allUsers = () => ({
+export const allRequests = () => ({
 
     type: LIST_REQUESTS,
     payload: {
@@ -35,6 +35,7 @@ export const allUsers = () => ({
         },
     },
 });
+
 export const addRequest = request => {
     console.log(`${UserService.getUsername()} added the request ${request.id}`);
     return {
@@ -69,8 +70,7 @@ export const changes = () => ({
     payload: {
       request: {
         url: 'https://localhost:5001/Requests',
-  
+
       },
     },
   });
-  
