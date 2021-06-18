@@ -39,7 +39,7 @@ const AddInigiblP = () => {
                    value={end} onChange={(e) => setEnd(e.target.value)}/>
           </div>
           <RenderOnRole roles={['user']}>
-            <button type="submit" className="btn btn-primary">Add book</button>
+            <button type="submit" className="btn btn-primary">Add Ineligible Period</button>
           </RenderOnRole>
         </form>
         {/* { UserService.hasRole(["admin"]) && <h1>I'm an Admin</h1> } */}

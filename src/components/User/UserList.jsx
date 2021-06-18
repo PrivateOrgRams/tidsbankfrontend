@@ -1,15 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { allIneligiblePeriod, deleteIneligibleperiod } from "../../modules/ineligibleperiod";
+import { Link } from "react-router-dom";
+import { allUsers, deleteUser } from "../../modules/users";
 import RolesRoute from "../RolesRoute";
 
-const Test = () => {
+const UserList = () => {
 
   const dispatch = useDispatch();
-  const { ineligibleperiod } = useSelector((state) => state);
+  const { users } = useSelector((state) => state);
 
   useEffect(() => {
-    dispatch(allIneligiblePeriod())
+    dispatch(allUsers())
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
@@ -20,22 +21,23 @@ const Test = () => {
           <thead>
           <tr>
             <th>ID</th>
-            <th>Stare Date</th>
-            <th>End Date </th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Action</th>
           </tr>
           </thead>
           <tbody>
-          {ineligibleperiod.map((ineligibleperiod) => (
-            <tr key={ineligibleperiod.id}>
-              <td>{ineligibleperiod.id}</td>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
               <td>
-                {ineligibleperiod.start}
+                <Link to={`/users/${user.id}`}>{user.firstName}</Link>
               </td>
-              <td>{ineligibleperiod.end}</td>
+              <td>{user.lastName}</td>
               <td>
                 <RolesRoute  roles={['admin']}>
-                <button  className="btn btn-xs btn-danger" onClick={() => dispatch(deleteIneligibleperiod(ineligibleperiod))}>
-                  Delete Inegible period
+                <button  className="btn btn-xs btn-danger" onClick={() => dispatch(deleteUser(user))}>
+                  Delete User
                 </button>
                 </RolesRoute>
               </td>
@@ -48,4 +50,4 @@ const Test = () => {
   );
 }
 
-export default Test
+export default UserList

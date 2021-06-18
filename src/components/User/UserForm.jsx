@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
-import { addUser } from "../modules/users";
-import RenderOnRole from "./RenderOnRole";
-import UserService from "../services/UserService";
+import { addUser } from "../../modules/users";
+import RenderOnRole from "../RenderOnRole";
+import UserService from "../../services/UserService";
 
 const UserForm = () => {
   const [Id, setId] = useState('');
