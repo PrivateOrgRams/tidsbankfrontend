@@ -5,7 +5,8 @@ import RolesRoute from "../RolesRoute";
 import ListOfRequests from "./ListOfRequests";
 import RequestDetails from './RequestDetails';
 import AddingRequest from './AddingRequest';
-import Ineligibleperiod from './Ineligibleperiod';
+import AddInigiblP from "../IneligiblePeriod/AddInigiblP";
+import '../App.css';
 
 
 
@@ -14,15 +15,17 @@ const RequestBox = () => (
     <Menu/>
     <Switch>
       <Route exact path="/">
-      <Ineligibleperiod/>
       <AddingRequest/>
       <ListOfRequests/>
+      <AddInigiblP/>
       </Route>
       <Route path="/requests/:requestId">
       <RequestDetails/>
       </Route>
       <RolesRoute path="/secret" roles={['admin']}>
-
+      <Route >
+      <AddInigiblP/>
+      </Route>
       </RolesRoute>
       <Route path="*">
         <NoMatch/>

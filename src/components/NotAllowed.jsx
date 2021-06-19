@@ -1,5 +1,5 @@
 const NotAllowed = () => (
-  <h1 className="text-info">⛔️</h1>
+  <p className="text-info">⛔️</p>
 )
 
 export default NotAllowed

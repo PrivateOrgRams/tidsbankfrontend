@@ -5,14 +5,14 @@ const Menu = () => (
   <nav className="navbar navbar-default">
     <div className="container-fluid">
       <div className="navbar-header">
-        <Link className="navbar-brand" to="/">UserBox!</Link>
+        <Link className="navbar-brand" to="/">Vocation Booker!</Link>
       </div>
       <div id="navbar">
         <ul className="nav navbar-nav">
-          <li><Link to="/">List</Link></li>
-          <li><Link to="/users/new">New User</Link></li>
+          {/* <li><Link to="/AddInigiblP">List</Link></li> */}
+          {/* <li><Link to="/users/new">New User</Link></li>
           <li><Link to="/secret">Secret Users</Link></li>
-          <li><Link to="/foo">No Match</Link></li>
+          <li><Link to="/foo">No Match</Link></li> */}
         </ul>
         <button className="btn btn-success navbar-btn navbar-right" style={{ marginRight: 0 }} onClick={() => UserService.doLogout()}>
           Logout

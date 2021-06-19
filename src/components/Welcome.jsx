@@ -1,4 +1,5 @@
 import UserService from "../services/UserService";
+import './App.css';
 
 const Welcome = () => (
   <div className="jumbotron">

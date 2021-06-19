@@ -40,7 +40,9 @@
     "react-fetch-hook": "^1.8.5",
     "react-helmet": "^6.1.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "react-icons": "^4.1.0",
+    "styled-components": "^5.2.1"
   },
   "browserslist": [
     ">0.2%",

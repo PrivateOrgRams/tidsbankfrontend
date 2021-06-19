@@ -17,7 +17,8 @@ function ShowineligibleperiodAndSelectedDate(props) {
   const [counter, setState] = useState(new Date());
   const [disableDateRange, setDisableDateRange] = useState([]);
   useEffect(() => {
-    dispatch(allIneligiblePeriod())
+    dispatch(allIneligiblePeriod());
+    fetchDates();
   }, []);
 
   const handleDayClick = (day) => {
@@ -30,30 +31,36 @@ function ShowineligibleperiodAndSelectedDate(props) {
   };
   const fetchDates = async () => {
     const dates = await ineligibleperiod;
-    const disabledDates = dates.map(date => {
+    const disabledDates = dates.map((date) => {
       const [startYear, startMonth, startDay] = date.start
-        .replace('T', '-')
-        .split('-');
-      const [endYear, endMonth, endDay] = date.end.replace('T', '-').split('-');
+        .replace("T", "-")
+        .split("-");
+      const [endYear, endMonth, endDay] = date.end.replace("T", "-").split("-");
       return {
         before: new Date(endYear, endMonth - 1, endDay), // end
-        after: new Date(startYear, startMonth - 1, startDay) // start
+        after: new Date(startYear, startMonth - 1, startDay), // start
       };
     });
-      setDisableDateRange(disabledDates);
+    setDisableDateRange(disabledDates);
   };
+  setTimeout(() => {
+    fetchDates();
+  }, 1000);
 
   useEffect(() => {
-    fetchDates();
+    setTimeout(() => {
+      fetchDates();
+    }, 10);
   }, []);
+
   const { from, to } = counter;
   const modifiers = { start: from, end: to };
 
   return (
     <div className="RangeExample">
       <p>
-        {!from && !to && "test."}
-        {from && !to && "test."}
+        {!from && !to && ""}
+        {from && !to && ""}
         {from &&
           to &&
           `Selected from ${from.toLocaleDateString()} to
@@ -66,7 +73,7 @@ function ShowineligibleperiodAndSelectedDate(props) {
       </p>
 
       <DayPicker
-        initialMonth={new Date(2020, 0)}
+        initialMonth={new Date()}
         disabledDays={disableDateRange}
         className="Selectable"
         numberOfMonths={props.numberOfMonths}
@@ -95,6 +102,6 @@ function ShowineligibleperiodAndSelectedDate(props) {
       </Helmet>
     </div>
   );
-};
+}
 
 export default ShowineligibleperiodAndSelectedDate;

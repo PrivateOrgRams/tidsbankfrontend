@@ -7,11 +7,12 @@ import NoMatch from "../NoMatch";
 import RolesRoute from "../RolesRoute";
 import SecretBooks from "../SecretBooks";
 
+
 const UserBox = () => (
   <>
     <Menu/>
     <Switch>
-      <Route exact path="/">
+      <Route exact path="/UserList">
         <UserList/>
       </Route>
       <Route exact path="/users/new">
