@@ -45,7 +45,7 @@ function ShowineligibleperiodAndSelectedDate(props) {
   };
   setTimeout(() => {
     fetchDates();
-  }, 1000);
+  }, 10);
 
   useEffect(() => {
     setTimeout(() => {

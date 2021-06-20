@@ -6,7 +6,7 @@ import * as RiIcons from 'react-icons/ri';
 
 export const SidebarData = [
   {
-    title: 'Overview',
+    title: 'Home',
     path: '/',
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -60,7 +60,22 @@ export const SidebarData = [
   {
     title: 'Admin',
     path: '/AddInigiblP',
-    icon: <IoIcons.IoMdPeople />
+    icon: <IoIcons.IoMdPeople />,
+
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: 'Request Status',
+        path: 'ListOfRequestAdmin',
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: 'Message 2',
+        path: '/messages/message2',
+        icon: <IoIcons.IoIosPaper />
+      }
+    ]
   },
   {
     title: 'Messages',

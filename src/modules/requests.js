@@ -30,7 +30,7 @@ export const allRequests = () => ({
     type: LIST_REQUESTS,
     payload: {
         request: {
-            url: 'https://localhost:5001/Requests',
+            url: 'https://localhost:5001/api/Requests',
 
         },
     },
@@ -49,6 +49,7 @@ export const addRequest = request => {
         },
     }
 };
+
 export const deleteRequest = request => {
     console.log(`${UserService.getUsername()} deletes the request ${request.id}`);
     return {

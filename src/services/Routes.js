@@ -6,6 +6,7 @@ import ListOfRequests from "../components/Request/ListOfRequests";
 import RequestDetails from '../components/Request/RequestDetails';
 import AddingRequest from '../components/Request/AddingRequest';
 import AddInigiblP from "../components/IneligiblePeriod/AddInigiblP";
+import ListOfRequestAdmin from "../components/Request/ListOfRequestAdmin";
 import '../components/App.css';
 
 
@@ -27,6 +28,11 @@ const Routes = () => (
       <RolesRoute path="/AddInigiblP" roles={['admin']}>
       <Route >
       <AddInigiblP/>
+      </Route>
+      </RolesRoute>
+      <RolesRoute path="/ListOfRequestAdmin" roles={['admin']}>
+      <Route >
+      <ListOfRequestAdmin/>
       </Route>
       </RolesRoute>
 

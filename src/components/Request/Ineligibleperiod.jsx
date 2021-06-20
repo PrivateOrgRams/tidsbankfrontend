@@ -60,8 +60,8 @@ function Ineligibleperiod(props) {
   return (
     <div className="RangeExample">
       <p>
-        {!from && !to && "test."}
-        {from && !to && "test."}
+        {!from && !to && ""}
+        {from && !to && ""}
         {from &&
           to &&
           `Selected from ${from.toLocaleDateString()} to
