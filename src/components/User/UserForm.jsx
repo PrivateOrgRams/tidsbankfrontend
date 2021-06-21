@@ -18,16 +18,19 @@ const UserForm = () => {
   const history = useHistory();
 
   const handleSubmit = (event) => {
+
     event.preventDefault();
     if (!FirstName || !LastName) {
       return;
     }
     dispatch(addUser({ FirstName: FirstName, LastName: LastName, Picture: Picture, Email:Email, Id }))
       .then(() => history.push("/"))
+
   };
 
   return (
     <div className="row">
+
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
           <h1>Add New User:</h1>
@@ -72,11 +75,11 @@ const UserForm = () => {
             <input type="text" className="form-control" placeholder="IsAdmin"
                    value={IsAdmin} onChange={(e) => setIsAdmin(e.target.value)}/>
           </div> */}
-          <RenderOnRole roles={['user']}>
-            <button type="submit" className="btn btn-primary">Add book</button>
+          <RenderOnRole roles={['admin']}>
+            <button type="submit" className="btn btn-primary" >Add User</button>
           </RenderOnRole>
         </form>
-        { UserService.hasRole(["admin"]) && <h1>I'm an Admin</h1> }
+        {/* { UserService.hasRole(["admin"]) && <h1>I'm an Admin</h1> } */}
       </div>
     </div>
   );

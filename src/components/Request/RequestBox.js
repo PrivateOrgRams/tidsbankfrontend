@@ -4,7 +4,8 @@ import NoMatch from "../NoMatch";
 import RolesRoute from "../RolesRoute";
 import ListOfRequests from "./ListOfRequests";
 import RequestDetails from './RequestDetails';
-import AddingRequest from './AddingRequest';
+//import AddingRequest from './AddingRequest';
+import CurrentUserRequest from "./CurrentUserRequest";
 import AddInigiblP from "../IneligiblePeriod/AddInigiblP";
 import '../App.css';
 
@@ -15,7 +16,6 @@ const RequestBox = () => (
     <Menu/>
     <Switch>
       <Route exact path="/">
-      <AddingRequest/>
       <ListOfRequests/>
       <AddInigiblP/>
       </Route>

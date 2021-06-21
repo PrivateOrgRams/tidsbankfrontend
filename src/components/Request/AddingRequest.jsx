@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { addRequest } from "../../modules/requests";
 import UserService from '../../services/UserService';
-import Ineligibleperiod from "./Ineligibleperiod"
+//import Ineligibleperiod from "./Ineligibleperiod"
 
 const AddingRequest = () => {
   const [title, setTitle] = useState('');
@@ -25,9 +25,9 @@ const AddingRequest = () => {
 
   return (
     <div className="row">
-        <div style={{float: 'right'}}>
+        {/* <div style={{float: 'right'}}>
             <Ineligibleperiod/>
-        </div>
+        </div> */}
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
           <h1>Request Vocation</h1>

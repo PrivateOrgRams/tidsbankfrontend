@@ -2,11 +2,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { allRequests, deleteRequest } from "../../modules/requests";
-//import Ineligibleperiod from "./Ineligibleperiod"
-import CurrentUserRequest from "./CurrentUserRequest"
+import Ineligibleperiod from "./Ineligibleperiod"
 import RolesRoute from "../RolesRoute";
 
-const ListOfRequests = () => {
+const CurrentUserRequest = () => {
   const dispatch = useDispatch();
   const { requests } = useSelector((state) => state);
   let request =   requests.filter(z=>z.state !== "Pending")
@@ -17,7 +16,9 @@ const ListOfRequests = () => {
 
   return (
     <div className="row">
-    <div><CurrentUserRequest/></div>
+      <div style={{float: 'right'}}>
+            <Ineligibleperiod/>
+        </div>
       <div className="col-sm-12">
         <h1>List of Request</h1>
         <table className="table table-striped">
@@ -63,4 +64,4 @@ const ListOfRequests = () => {
   );
 };
 
-export default ListOfRequests;
+export default CurrentUserRequest;

@@ -27,7 +27,7 @@ export const allUsers = () => ({
   type: LIST_USERS,
   payload: {
     request: {
-      url: 'https://localhost:5001/user/all',
+      url: 'https://localhost:5001/api/Users',
 
     },
   },
@@ -38,7 +38,7 @@ export const addUser = user => {console.log(user.id)
     type: ADD_USER,
     payload: {
       request: {
-        url: 'https://localhost:5001/user',
+        url: 'https://localhost:5001/api/Users',
         method: HttpService.HttpMethods.POST,
         data: user,
       },

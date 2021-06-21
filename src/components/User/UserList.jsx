@@ -16,7 +16,7 @@ const UserList = () => {
   return (
     <div className="row">
       <div className="col-sm-12">
-        <h1>TidsBanken</h1>
+        <h1>TidsBanken User List</h1>
         <table className="table table-striped">
           <thead>
           <tr>

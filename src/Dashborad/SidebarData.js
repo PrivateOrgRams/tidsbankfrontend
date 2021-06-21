@@ -15,12 +15,12 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Users',
-        path: '/overview/users',
+        path: 'UserList',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: 'Revenue',
-        path: '/overview/revenue',
+        title: 'New Request',
+        path: '/AddingRequest',
         icon: <IoIcons.IoIosPaper />
       }
     ]
@@ -71,8 +71,8 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: 'Message 2',
-        path: '/messages/message2',
+        title: 'Rejester User',
+        path: 'UserForm',
         icon: <IoIcons.IoIosPaper />
       }
     ]
