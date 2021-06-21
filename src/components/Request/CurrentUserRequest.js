@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 import { allRequests, deleteRequest } from "../../modules/requests";
 import Ineligibleperiod from "./Ineligibleperiod"
 import RolesRoute from "../RolesRoute";
+import UserService from "../../services/UserService";
 
 const CurrentUserRequest = () => {
   const dispatch = useDispatch();
   const { requests } = useSelector((state) => state);
-  let request =   requests.filter(z=>z.state !== "Pending")
+  console.log(requests)
+  let request =   requests.filter(z=>z.ownerId === UserService.getUsername())
+  console.log(request)
 
   useEffect(() => {
     dispatch(allRequests());
@@ -20,7 +23,7 @@ const CurrentUserRequest = () => {
             <Ineligibleperiod/>
         </div>
       <div className="col-sm-12">
-        <h1>List of Request</h1>
+        <h1>{UserService.getGivenName()}'s Request</h1>
         <table className="table table-striped">
           <thead>
             <tr>

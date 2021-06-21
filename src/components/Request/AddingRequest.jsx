@@ -25,9 +25,6 @@ const AddingRequest = () => {
 
   return (
     <div className="row">
-        {/* <div style={{float: 'right'}}>
-            <Ineligibleperiod/>
-        </div> */}
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
           <h1>Request Vocation</h1>
