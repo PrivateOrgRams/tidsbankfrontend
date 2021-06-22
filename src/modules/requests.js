@@ -30,7 +30,7 @@ export const allRequests = () => ({
     type: LIST_REQUESTS,
     payload: {
         request: {
-            url: 'https://localhost:5001/api/Requests',
+            url: 'https://localhost:5001/Requests',
 
         },
     },

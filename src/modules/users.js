@@ -27,7 +27,7 @@ export const allUsers = () => ({
   type: LIST_USERS,
   payload: {
     request: {
-      url: 'https://localhost:5001/api/Users',
+      url: 'https://localhost:5001/user',
 
     },
   },
@@ -38,7 +38,7 @@ export const addUser = user => {console.log(user.id)
     type: ADD_USER,
     payload: {
       request: {
-        url: 'https://localhost:5001/api/Users',
+        url: 'https://localhost:5001/user',
         method: HttpService.HttpMethods.POST,
         data: user,
       },
@@ -46,13 +46,28 @@ export const addUser = user => {console.log(user.id)
   }
 };
 
+// export const editUser = user => {console.log(user.id)
+//   console.log(`${UserService.getUsername()} added the user ${user.id}`);
+//   return {
+//     type: ADD_USER,
+//     payload: {
+//       request: {
+//         url: 'https://localhost:5001/api/Users/Status',
+//         method: HttpService.HttpMethods.POST,
+//         data: user,
+//       },
+//     },
+//   }
+// };
+
+
 export const editUser = user => {console.log(user.id)
   console.log(`${UserService.getUsername()} added the user ${user.id}`);
   return {
     type: ADD_USER,
     payload: {
       request: {
-        url: 'https://localhost:5001/api/Users/Status',
+        url: 'https://localhost:5001/user',
         method: HttpService.HttpMethods.POST,
         data: user,
       },
@@ -67,7 +82,7 @@ export const deleteUser = user => {
     payload: {
       user,
       request: {
-        url: `https://localhost:5001/api/Users/${user.id}`,
+        url: `https://localhost:5001/user/${user.id}`,
         method: HttpService.HttpMethods.DELETE,
       },
     },
@@ -79,7 +94,7 @@ export const changes = () => ({
   type: LIST_USERS,
   payload: {
     request: {
-      url: 'https://localhost:5001/api/Users',
+      url: 'https://localhost:5001/user',
 
     },
   },

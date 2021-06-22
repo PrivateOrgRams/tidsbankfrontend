@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { allUsers, editUser } from "../../modules/users";
+import { allUsers } from "../../modules/users";
 import Edituser from './Edituser'
 
 const UserDetails = () => {
@@ -19,10 +19,6 @@ const UserDetails = () => {
     setUser(users.find((user) => user.id === userId));
     // setBook(books.find(user => book.id === parseInt(bookId, 10)))
   }, [userId, users]);
-
-  const handleSubmit = async (newuser) => {
-    dispatch(editUser(newuser));
-  };
 
   //   const ChangeStatue = async ( id , state) => {
   //     fetch("https://localhost:5001/api/Status/Status/",
@@ -48,12 +44,6 @@ const UserDetails = () => {
           <Link to="/">&laquo; back to list</Link>
         </p>
       </div>
-      <button
-        className="btn btn-xs btn-danger"
-        onClick={() => handleSubmit({ id: user.id, email: "Reject" })}
-      >
-        Delete Request
-      </button>
       <Edituser/>
     </div>
   ) : null;

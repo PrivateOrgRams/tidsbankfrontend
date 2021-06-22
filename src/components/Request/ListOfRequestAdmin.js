@@ -13,7 +13,7 @@ const ListOfRequestAdmin = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const ChangeStatue = async (id, state) => {
-    fetch("https://localhost:5001/api/Status/Status/", {
+    fetch("https://localhost:5001/stat/", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ id: id, State: state }),
@@ -51,9 +51,9 @@ const ListOfRequestAdmin = () => {
                 <td
                   style={{
                     color:
-                      req.state === "Accept"
+                      req.state === "Approved"
                         ? "green"
-                        : req.state === "Reject"
+                        : req.state === "Denied"
                         ? "red"
                         : "black",
                   }}
@@ -65,14 +65,14 @@ const ListOfRequestAdmin = () => {
                     <button
                       className="btn btn-xs btn-success"
                       // onClick={() => fetchDates(req.id, "Accept")}
-                      onClick={() => ChangeStatue(req.id, "Accept")}
+                      onClick={() => ChangeStatue(req.id, "Approved")}
                     >
                       Accept
                     </button>
                     <span>| |</span>
                     <button
                       className="btn btn-xs btn-danger"
-                      onClick={() => ChangeStatue(req.id, "Reject")}
+                      onClick={() => ChangeStatue(req.id, "Denied")}
                     >
                       Reject
                     </button>

@@ -31,7 +31,7 @@ const AddingRequest = () => {
           <h1>Request Vocation</h1>
           <div className="form-group">
             <input  type="text"  className="form-control" placeholder="title"
-                   value={title} onChange={(e) => setTitle(UserService.getUsername())}/>
+                   value={title} onChange={(e) => setTitle(e.target.value)}/>
           </div>
           <div className="form-group">
             <label htmlFor="start">periodStart</label>
@@ -45,7 +45,7 @@ const AddingRequest = () => {
           </div>
           <div className="form-group">
             <input  type="text" className="form-control" placeholder="Owner"
-                   value={ownerId} onChange={(e) => setOwnerId(UserService.getGivenName())}/>
+                   value={ownerId} onChange={(e) => setOwnerId(UserService.getUsername)}/>
           </div>
             <button type="submit" className="btn btn-primary">Vocation Request</button>
         </form>
