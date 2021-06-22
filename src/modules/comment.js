@@ -25,12 +25,12 @@ const commentReducer = (state = [], action) => {
 
 export default commentReducer;
 
-export const allUsers = () => ({
+export const allComments = comment => ({
 
     type: LIST_COMMENTS,
     payload: {
         request: {
-            url: 'https://localhost:5001/comment',
+            url: `https://localhost:5001/comment/requests/${comment}`,
 
         },
     },
@@ -41,7 +41,7 @@ export const addComment = comment => {
         type: ADD_COMMENT,
         payload: {
             request: {
-                url: 'https://localhost:5001/comment',
+                url: 'https://localhost:5001/comment/requests/',
                 method: HttpService.HttpMethods.POST,
                 data: comment,
             },
@@ -55,7 +55,7 @@ export const deleteComment = comment => {
         payload: {
             comment,
             request: {
-                url: `https://localhost:5001/comment/${comment.id}`,
+                url: `https://localhost:5001/comment/requests/${comment.id}`,
                 method: HttpService.HttpMethods.DELETE,
             },
         },
@@ -70,8 +70,7 @@ export const changes = () => ({
     payload: {
       request: {
         url: 'https://localhost:5001/comment',
-  
+
       },
     },
   });
-  
