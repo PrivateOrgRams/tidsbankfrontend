@@ -9,7 +9,7 @@ import RolesRoute from "../RolesRoute";
 const ListOfRequests = () => {
   const dispatch = useDispatch();
   const { requests } = useSelector((state) => state);
-  let request =   requests.filter(z=>z.state !== "Pending")
+  let request =   requests.filter(z=>z.state !== "Pending" && z.state!=="Denied")
 
   useEffect(() => {
     dispatch(allRequests());
@@ -41,7 +41,7 @@ const ListOfRequests = () => {
                 <td >{req.periodStart}</td>
                 <td>{req.periodEnd}</td>
                 <td>{req.ownerName}</td>
-                <td style={{color: req.state === "Accept"  ? 'green' : req.state=== "Reject"? "red" : "black"}}>
+                <td style={{color: req.state === "Approved"  ? 'green' : req.state=== "Denied"? "red" : "black"}}>
                   {req.state}
                 </td>
                 <td>

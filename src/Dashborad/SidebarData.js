@@ -25,38 +25,38 @@ export const SidebarData = [
       }
     ]
   },
-  {
-    title: 'test1',
-    path: '/reports',
-    icon: <IoIcons.IoIosPaper />,
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
+  // {
+  //   title: 'test1',
+  //   path: '/reports',
+  //   icon: <IoIcons.IoIosPaper />,
+  //   iconClosed: <RiIcons.RiArrowDownSFill />,
+  //   iconOpened: <RiIcons.RiArrowUpSFill />,
 
-    subNav: [
-      {
-        title: 'test1',
-        path: '/reports/reports1',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'sub-nav'
-      },
-      {
-        title: 'Reports 2',
-        path: '/reports/reports2',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'sub-nav'
-      },
-      {
-        title: 'Reports 3',
-        path: '/reports/reports3',
-        icon: <IoIcons.IoIosPaper />
-      }
-    ]
-  },
-  {
-    title: 'test5',
-    path: '/products',
-    icon: <FaIcons.FaCartPlus />
-  },
+  //   subNav: [
+  //     {
+  //       title: 'test1',
+  //       path: '/reports/reports1',
+  //       icon: <IoIcons.IoIosPaper />,
+  //       cName: 'sub-nav'
+  //     },
+  //     {
+  //       title: 'Reports 2',
+  //       path: '/reports/reports2',
+  //       icon: <IoIcons.IoIosPaper />,
+  //       cName: 'sub-nav'
+  //     },
+  //     {
+  //       title: 'Reports 3',
+  //       path: '/reports/reports3',
+  //       icon: <IoIcons.IoIosPaper />
+  //     }
+  //   ]
+  // },
+  // {
+  //   title: 'test5',
+  //   path: '/products',
+  //   icon: <FaIcons.FaCartPlus />
+  // },
   {
     title: 'Admin',
     path: '/AddInigiblP',
@@ -77,27 +77,27 @@ export const SidebarData = [
       }
     ]
   },
-  {
-    title: 'Messages',
-    path: '/messages',
-    icon: <FaIcons.FaEnvelopeOpenText />,
+  // {
+  //   title: 'Messages',
+  //   path: '/messages',
+  //   icon: <FaIcons.FaEnvelopeOpenText />,
 
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
+  //   iconClosed: <RiIcons.RiArrowDownSFill />,
+  //   iconOpened: <RiIcons.RiArrowUpSFill />,
 
-    subNav: [
-      {
-        title: 'Message 1',
-        path: '/messages/message1',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: 'Message 2',
-        path: '/messages/message2',
-        icon: <IoIcons.IoIosPaper />
-      }
-    ]
-  },
+  //   subNav: [
+  //     {
+  //       title: 'Message 1',
+  //       path: '/messages/message1',
+  //       icon: <IoIcons.IoIosPaper />
+  //     },
+  //     {
+  //       title: 'Message 2',
+  //       path: '/messages/message2',
+  //       icon: <IoIcons.IoIosPaper />
+  //     }
+  //   ]
+  // },
   {
     title: 'Support',
     path: '/support',

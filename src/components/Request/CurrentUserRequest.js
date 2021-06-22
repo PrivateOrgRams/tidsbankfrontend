@@ -45,7 +45,7 @@ const CurrentUserRequest = () => {
                 <td >{req.periodStart}</td>
                 <td>{req.periodEnd}</td>
                 <td>{req.ownerName}</td>
-                <td style={{color: req.state === "Accept"  ? 'green' : req.state=== "Reject"? "red" : "black"}}>
+                <td style={{color: req.state === "Approved"  ? 'green' : req.state=== "Denied"? "red" : "black"}}>
                   {req.state}
                 </td>
                 <td>
