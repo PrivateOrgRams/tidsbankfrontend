@@ -38,9 +38,8 @@ const AddComments = () => {
             <input type="text" className="form-control" placeholder="Message"
                    value={Message} onChange={(e) => setMessage(e.target.value)}/>
           </div>
-         <RenderOnRole roles={['admin']}>
-            <button type="submit" className="btn btn-primary" >Add User</button>
-          </RenderOnRole>
+
+            <button type="submit" className="btn btn-primary" >Add Comment</button>
         </form>
         {/* { UserService.hasRole(["admin"]) && <h1>I'm an Admin</h1> } */}
       </div>

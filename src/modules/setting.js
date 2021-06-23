@@ -51,7 +51,7 @@ export const addSetting = setting => {
 };
 
 export const deleteSetting = setting => {
-    console.log(`${UserService.getUsername()} deletes the comment ${comment.id}`);
+   // console.log(`${UserService.getUsername()} deletes the comment ${comment.id}`);
     return {
         type: DELETE_SETTING,
         payload: {

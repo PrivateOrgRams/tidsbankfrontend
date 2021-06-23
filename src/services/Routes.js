@@ -10,6 +10,7 @@ import AddInigiblP from "../components/IneligiblePeriod/AddInigiblP";
 import ListOfRequestAdmin from "../components/Request/ListOfRequestAdmin";
 import UserForm from "../components/User/UserForm";
 import UserList from "../components/User/UserList";
+import   UserProfile from "../components/User/UserProfile";
 import UserDetails from "../components/User/UserDetails";
 
 import '../components/App.css';
@@ -43,6 +44,10 @@ const Routes = () => (
       <Route path="/CurrentUserRequest">
       <CurrentUserRequest/>
       </Route>
+      <Route path="/UserProfile">
+      <UserProfile/>
+      </Route>
+
 
       <RolesRoute path="/AddInigiblP" roles={['admin']}>
       <Route >

@@ -17,6 +17,13 @@ export const SidebarData = [
     path: "/AddingRequest",
     icon: <IoIcons.IoIosPaper />,
   },
+  {
+    title: "Profile",
+    path: "/UserProfile",
+    icon: <IoIcons.IoIosPaper />,
+
+
+  },
 
   {
     title: "Support",

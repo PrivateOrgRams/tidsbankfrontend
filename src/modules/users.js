@@ -60,7 +60,6 @@ export const addUser = user => {console.log(user.id)
 //   }
 // };
 
-
 export const editUser = user => {console.log(user.id)
   console.log(`${UserService.getUsername()} added the user ${user.id}`);
   return {
@@ -68,12 +67,27 @@ export const editUser = user => {console.log(user.id)
     payload: {
       request: {
         url: 'https://localhost:5001/user',
-        method: HttpService.HttpMethods.Patch,
+        method: HttpService.HttpMethods.patch,
         data: user,
       },
     },
   }
 };
+
+
+// export const editUser = user => {console.log(user.id)
+//   console.log(`${UserService.getUsername()} added the user ${user.id}`);
+//   return {
+//     type: ADD_USER,
+//     payload: {
+//       request: {
+//         url: 'https://localhost:5001/user',
+//         method: HttpService.HttpMethods.POST,
+//         data: user,
+//       },
+//     },
+//   }
+// };
 
 export const deleteUser = user => {
   console.log(`${UserService.getUsername()} deletes the user ${user.id}`);

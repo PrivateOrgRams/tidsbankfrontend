@@ -13,7 +13,7 @@ const UserDetails = () => {
 
   useEffect(() => {
     dispatch(allUsers());
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     setUser(users.find((user) => user.id === userId));
@@ -44,7 +44,7 @@ const UserDetails = () => {
           <Link to="/">&laquo; back to list</Link>
         </p>
       </div>
-      <Edituser/>
+      <Edituser user = {user} />
     </div>
   ) : null;
 };
