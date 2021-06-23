@@ -18,12 +18,13 @@ const App = () => (
   <Provider store={store}>
 
     <BrowserRouter>
-    <Sidebar />
+
       <div className="container">
         <RenderOnAnonymous>
           <Welcome/>
         </RenderOnAnonymous>
          <RenderOnAuthenticated>
+         <Sidebar />
          <Routes/>
         </RenderOnAuthenticated>
       </div>

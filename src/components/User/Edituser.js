@@ -48,7 +48,7 @@ const UserForm = () => {
           <div className="form-group">
             <label htmlFor="Email">Email</label>
             <input type="text" className="form-control" placeholder="Email"
-                   value={Email} onChange={(e) => setEmail(e.target.value)}/>
+                   value={Email} onChange={(e) => setEmail(e.target.value)} required/>
           </div>
 
           <div className="form-group">
@@ -56,11 +56,6 @@ const UserForm = () => {
             <input type="text" className="form-control" placeholder="Picture"
                    value={Picture} onChange={(e) => setPicture(e.target.value)}/>
           </div>
-          {/* <div className="form-group">
-            <label htmlFor="IsAdmin">IsAdmin</label>
-            <input type="text" className="form-control" placeholder="IsAdmin"
-                   value={IsAdmin} onChange={(e) => setIsAdmin(e.target.value)}/>
-          </div> */}
           <RenderOnRole roles={['admin']}>
             <button type="submit" className="btn btn-primary" >Add User</button>
           </RenderOnRole>

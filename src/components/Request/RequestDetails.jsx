@@ -38,6 +38,7 @@ const RequestDetails = () => {
         <hr/>
       </div>
       <CommentsforRequest dataParentToChild = {request.id}/>
+      <span></span>
       <p>
           <Link to="/">&laquo; back to list</Link>
         </p>

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { allComments, deleteComment } from "../../modules/comment";
 import RolesRoute from "../RolesRoute";
+import UserService from "../../services/UserService";
+import AddComments from "./AddComments"
 
 const CommentsforRequest = (  {dataParentToChild}) => {
 
@@ -16,14 +18,15 @@ const CommentsforRequest = (  {dataParentToChild}) => {
   return (
     <div className="row">
       <div className="col-sm-12">
+      <h6>{UserService.getUsername()}</h6>
         <h1>comments</h1>
         <table className="table table-striped">
           <thead>
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Last Name</th>
-            <th>Action</th>
+            <th>Message</th>
+            {/* <th>Action</th> */}
           </tr>
           </thead>
           <tbody>
@@ -32,21 +35,23 @@ const CommentsforRequest = (  {dataParentToChild}) => {
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>
-               {user.userId}
+               {user.userName}
               </td>
               <td><p>{user.myMessage}</p></td>
               <td>
-                <RolesRoute  roles={['user']}>
+              {/* <h1>{UserService.getUsername()}
                 <button  className="btn btn-xs btn-danger" onClick={() => dispatch(deleteComment(user))}>
                   Delete Comments
                 </button>
-                </RolesRoute>
+                </h1> */}
+
               </td>
             </tr>
           ))}
           </tbody>
         </table>
       </div>
+      <AddComments/>
     </div>
   );
 }

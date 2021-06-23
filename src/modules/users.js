@@ -68,7 +68,7 @@ export const editUser = user => {console.log(user.id)
     payload: {
       request: {
         url: 'https://localhost:5001/user',
-        method: HttpService.HttpMethods.POST,
+        method: HttpService.HttpMethods.Patch,
         data: user,
       },
     },

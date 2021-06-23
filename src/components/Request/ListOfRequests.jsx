@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { allRequests, deleteRequest } from "../../modules/requests";
 //import Ineligibleperiod from "./Ineligibleperiod"
 import CurrentUserRequest from "./CurrentUserRequest"
-import RolesRoute from "../RolesRoute";
+import Element from "../Element";
 
 const ListOfRequests = () => {
   const dispatch = useDispatch();
@@ -45,14 +45,14 @@ const ListOfRequests = () => {
                   {req.state}
                 </td>
                 <td>
-                  <RolesRoute  roles={['admin']}>
+                  <Element  roles={['admin']}>
                   <button
                     className="btn btn-xs btn-danger"
                     onClick={() => dispatch(deleteRequest(req))}
                   >
                     Delete Request
                   </button>
-                  </RolesRoute>
+                  </Element>
                 </td>
               </tr>
             ))}
