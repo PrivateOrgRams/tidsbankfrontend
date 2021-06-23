@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { allRequests, deleteRequest } from "../../modules/requests";
 import Ineligibleperiod from "./Ineligibleperiod"
-import RolesRoute from "../RolesRoute";
+import Element from "../Element";
 import UserService from "../../services/UserService";
 
 const CurrentUserRequest = () => {
@@ -49,14 +49,14 @@ const CurrentUserRequest = () => {
                   {req.state}
                 </td>
                 <td>
-                  <RolesRoute  roles={['admin']}>
+                  <Element  roles={['admin']}>
                   <button
                     className="btn btn-xs btn-danger"
                     onClick={() => dispatch(deleteRequest(req))}
                   >
                     Delete Request
                   </button>
-                  </RolesRoute>
+                  </Element>
                 </td>
               </tr>
             ))}

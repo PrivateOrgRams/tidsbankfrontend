@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
+import { SidebarDataAdmin } from './SidebarData';
+import Element from "../components/Element";
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
+
 
 const Nav = styled.div`
   background:#f0ad4e;
@@ -62,6 +65,11 @@ const Sidebar = () => {
             {SidebarData.map((item, index) => {
               return <SubMenu item={item} key={index} />;
             })}
+            <Element  roles={['admin']}>
+            {SidebarDataAdmin.map((item, index) => {
+              return <SubMenu item={item} key={index} />;
+            })}
+            </Element>
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>
