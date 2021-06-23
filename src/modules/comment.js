@@ -35,19 +35,23 @@ export const allComments = comment => ({
         },
     },
 });
-export const addComment = comment => {
-    console.log(`${UserService.getUsername()} added the comment ${comment.id}`);
-    return {
-        type: ADD_COMMENT,
-        payload: {
-            request: {
-                url: 'https://localhost:5001/comment/requests/',
-                method: HttpService.HttpMethods.POST,
-                data: comment,
-            },
-        },
-    }
+
+
+export const addComment = comment => {console.log(comment.id)
+  console.log(`${UserService.getUsername()} added the user ${comment.id}`);
+  return {
+    type: ADD_COMMENT,
+    payload: {
+      request: {
+        url: 'https://localhost:5001/comment',
+        method: HttpService.HttpMethods.POST,
+        data: comment,
+      },
+    },
+  }
 };
+
+
 export const deleteComment = comment => {
     console.log(`${UserService.getUsername()} deletes the comment ${comment.id}`);
     return {

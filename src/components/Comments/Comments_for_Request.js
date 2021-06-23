@@ -12,7 +12,7 @@ const CommentsforRequest = (  {dataParentToChild}) => {
   const { comment } = useSelector((state) => state);
  console.log(  {dataParentToChild})
   useEffect(() => {
-    dispatch(allComments(dataParentToChild))
+    dispatch(allComments(dataParentToChild.id))
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
  console.log(comment)
   return (
@@ -51,7 +51,7 @@ const CommentsforRequest = (  {dataParentToChild}) => {
           </tbody>
         </table>
       </div>
-      <AddComments/>
+      <AddComments  comentsId = {dataParentToChild.id}/>
     </div>
   );
 }

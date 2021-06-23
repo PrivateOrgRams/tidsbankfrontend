@@ -37,7 +37,7 @@ const RequestDetails = () => {
         <p className="lead">{request.moderatedAt}</p>
         <hr/>
       </div>
-      <CommentsforRequest dataParentToChild = {request.id}/>
+      <CommentsforRequest dataParentToChild = {request}/>
       <span></span>
       <p>
           <Link to="/">&laquo; back to list</Link>

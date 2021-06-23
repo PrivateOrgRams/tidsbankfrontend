@@ -5,7 +5,7 @@ import { addComment } from "../../modules/comment";
 import RenderOnRole from "../RenderOnRole";
 import UserService from "../../services/UserService";
 
-const AddComments = () => {
+const AddComments = (dataParentToChild) => {
   // const [Id, setId] = useState('');
   const [Message, setMessage] = useState('');
   // const [CreatedOn, setCreatedOn] = useState('');
@@ -13,7 +13,7 @@ const AddComments = () => {
   // const [UserId, setUserId] = useState('');
   // const [IsAdmin, setIsAdmin] = useState('');
 
-
+console.log(dataParentToChild.comentsId)
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -22,7 +22,7 @@ const AddComments = () => {
     if (!Message) {
       return;
     }
-    dispatch(addComment({ Message: Message, CreatedOn: new Date(), UpdatedOn: new Date(), UserId:UserService.getUsername() }))
+    dispatch(addComment({ Message: Message, CreatedOn: new Date(), UpdatedOn: new Date(), UserId:UserService.getUsername() ,RequestId:dataParentToChild.comentsId  }))
       .then(() => history.push("/"))
 
   };
