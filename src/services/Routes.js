@@ -12,6 +12,7 @@ import UserForm from "../components/User/UserForm";
 import UserList from "../components/User/UserList";
 import   UserProfile from "../components/User/UserProfile";
 import UserDetails from "../components/User/UserDetails";
+import SettingList from '../components/Settings/SettingList';
 
 import '../components/App.css';
 
@@ -63,6 +64,12 @@ const Routes = () => (
       <RolesRoute path="/UserForm" roles={['admin']}>
       <Route >
       <UserForm/>
+      </Route>
+      </RolesRoute>
+
+      <RolesRoute path="/SettingList" roles={['admin']}>
+      <Route >
+      <SettingList/>
       </Route>
       </RolesRoute>
 

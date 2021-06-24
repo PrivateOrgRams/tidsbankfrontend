@@ -5,7 +5,7 @@ const Menu = () => (
   <nav className="navbar navbar-default">
     <div className="container-fluid">
       <div className="navbar-header">
-        <Link className="navbar-brand" to="/">Vocation Booker!</Link>
+        <Link className="navbar-brand" to="/">Vacation Booker!</Link>
       </div>
       <div id="navbar">
         <ul className="nav navbar-nav">

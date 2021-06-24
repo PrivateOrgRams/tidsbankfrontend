@@ -28,7 +28,7 @@ const AddingRequest = () => {
     <div className="row">
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
-          <h1>Request Vocation</h1>
+          <h1>Request Vacation</h1>
           <div className="form-group">
             <input  type="text"  className="form-control" placeholder="title"
                    value={title} onChange={(e) => setTitle(e.target.value)}/>

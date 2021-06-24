@@ -16,7 +16,7 @@ const settingReducer = (state = [], action) => {
             return action.payload.data;
 
         case DELETE_SETTING:
-            return state.filter((setting) => setting.id !== action.payload.setting.id);
+            return state.filter((setting) => setting.userId !== action.payload.setting.userId);
 
         default:
             return state;
@@ -37,12 +37,12 @@ export const allUsers = () => ({
 });
 
 export const addSetting = setting => {
-    console.log(`${UserService.getUsername()} added the setting ${setting.id}`);
+    console.log(`${UserService.getUsername()} added the setting ${setting.userId}`);
     return {
         type: ADD_SETTING,
         payload: {
             request: {
-                url: 'C',
+                url: 'https://localhost:5001/Settings',
                 method: HttpService.HttpMethods.POST,
                 data: setting,
             },
@@ -51,13 +51,13 @@ export const addSetting = setting => {
 };
 
 export const deleteSetting = setting => {
-   // console.log(`${UserService.getUsername()} deletes the comment ${comment.id}`);
+    console.log(`${UserService.getUsername()} deletes the setting ${setting.userId}`);
     return {
         type: DELETE_SETTING,
         payload: {
             setting,
             request: {
-                url: `https://localhost:5001/Settings/${setting.id}`,
+                url: `https://localhost:5001/Settings/${setting.userId}`,
                 method: HttpService.HttpMethods.DELETE,
             },
         },

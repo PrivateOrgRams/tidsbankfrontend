@@ -17,7 +17,6 @@ const UserDetails = () => {
 
   useEffect(() => {
     setUser(users.find((user) => user.id === userId));
-    // setBook(books.find(user => book.id === parseInt(bookId, 10)))
   }, [userId, users]);
 
   //   const ChangeStatue = async ( id , state) => {
@@ -33,11 +32,11 @@ const UserDetails = () => {
   return user ? (
     <div className="row">
       <div className="col-sm-12">
-        <h1>Details for user ID {user.id}</h1>
+        <h1>Details for user ID:  {user.id}</h1>
         <hr />
-        <h3>Empolyee</h3>
+        <h3>Empolyee :</h3>
         <p className="lead">{user.firstName}</p>
-        <h3>Title</h3>
+        <h3>Title :</h3>
         <p className="lead">{user.lastName}</p>
         <hr />
         <p>
