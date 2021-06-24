@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { allUsers, deleteSetting } from "../../modules/setting";
+import { allSettings, deleteSetting } from "../../modules/setting";
 import RolesRoute from "../RolesRoute";
 import AddSetting from "./AddSetting";
 
@@ -11,7 +11,7 @@ const SettingList = () => {
   const { setting } = useSelector((state) => state);
   console.log(setting)
   useEffect(() => {
-    dispatch(allUsers())
+    dispatch(allSettings())
   }, []);
 
   return (

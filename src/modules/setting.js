@@ -25,7 +25,7 @@ const settingReducer = (state = [], action) => {
 
 export default settingReducer;
 
-export const allUsers = () => ({
+export const allSettings = () => ({
 
     type: LIST_SETTINGS,
     payload: {
