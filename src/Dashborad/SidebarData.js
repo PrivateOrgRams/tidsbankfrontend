@@ -55,4 +55,9 @@ export const SidebarDataAdmin = [
     path: "UserForm",
     icon: <IoIcons.IoIosPaper />,
   },
+  {
+    title: "Settings",
+    path: "SettingList",
+    icon: <IoIcons.IoIosPaper />,
+  },
 ];

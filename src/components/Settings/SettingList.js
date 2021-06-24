@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { allSettings, deleteSetting } from "../../modules/setting";
-import RolesRoute from "../RolesRoute";
 import AddSetting from "./AddSetting";
 
 const SettingList = () => {
@@ -24,7 +22,6 @@ const SettingList = () => {
             <th>Id</th>
             <th>MaxVacationLength</th>
             <th>UserId</th>
-
           </tr>
           </thead>
           <tbody>
@@ -33,11 +30,8 @@ const SettingList = () => {
               <td>{st.id}</td>
               <td>{st.maxVacationLength}</td>
               <td>{st.userId}</td>
-
               <td>
-
                 <button  className="btn btn-xs btn-danger" onClick={() => dispatch(deleteSetting(st))}>
-
                   Delete
                 </button>
 
@@ -51,7 +45,6 @@ const SettingList = () => {
       <AddSetting/>
     </div>
   );
-  console.log(setting)
 }
 
 export default SettingList
