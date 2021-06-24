@@ -15,11 +15,7 @@ const Users = {
 };
 
 function renderDay(day) {
-  const range = {
-    from: new Date(2015, 5, 14),
-    to: new Date(2015, 5, 18)
-  }
-  const newRange = DateUtils.addDayToRange(new Date(2015, 5, 24), range);
+
   const date = day.getDate();
   const dateStyle = {
     position: 'absolute',

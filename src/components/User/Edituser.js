@@ -19,12 +19,9 @@ const UserForm = (user) => {
   const history = useHistory();
 
   const handleSubmit = (event) => {
-
+   console.log(event)
     event.preventDefault();
-    if (FirstName) {
-      return;
-    }
-    dispatch(editUser({ FirstName: FirstName, LastName: LastName, Email:Email, Id:UserService.getUsername() }))
+    dispatch(editUser({ Picture:"####", FirstName: FirstName, LastName: LastName, Email:Email, Id:UserService.getUsername() }))
       .then(() => history.push("/"))
 
   };

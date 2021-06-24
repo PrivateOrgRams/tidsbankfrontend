@@ -12,6 +12,9 @@ const SettingList = () => {
     dispatch(allSettings())
   }, []);
 
+  useEffect(() => {
+  }, []);
+
   return (
     <div className="row">
       <div className="col-sm-12">

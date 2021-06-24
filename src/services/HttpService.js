@@ -5,6 +5,7 @@ const HttpMethods = {
   GET: 'GET',
   POST: 'POST',
   DELETE: 'DELETE',
+  PATCH: 'patch',
 };
 
 const _axios = axios.create();

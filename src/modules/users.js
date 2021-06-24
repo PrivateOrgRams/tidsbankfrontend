@@ -2,6 +2,7 @@ import { SUCCESS_SUFFIX } from "redux-axios-middleware";
 import HttpService from "../services/HttpService";
 import UserService from "../services/UserService";
 
+export const EDIT_USER = "EDIT_USER";
 export const LIST_USERS = 'LIST_USERS';
 export const ADD_USER = 'ADD_USER';
 export const DELETE_USER = 'DELETE_USER';
@@ -63,11 +64,11 @@ export const addUser = user => {console.log(user.id)
 export const editUser = user => {console.log(user.id)
   console.log(`${UserService.getUsername()} added the user ${user.id}`);
   return {
-    type: ADD_USER,
+    type: EDIT_USER,
     payload: {
       request: {
         url: 'https://localhost:5001/user',
-        method: HttpService.HttpMethods.patch,
+        method: HttpService.HttpMethods.PATCH,
         data: user,
       },
     },
