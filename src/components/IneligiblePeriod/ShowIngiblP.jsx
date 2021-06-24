@@ -43,9 +43,9 @@ function ShowineligibleperiodAndSelectedDate(props) {
     });
     setDisableDateRange(disabledDates);
   };
-  setTimeout(() => {
-    fetchDates();
-  }, 10);
+  // setTimeout(() => {
+  //   fetchDates();
+  // }, 10);
 
   useEffect(() => {
     setTimeout(() => {
