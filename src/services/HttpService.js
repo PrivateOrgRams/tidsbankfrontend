@@ -20,7 +20,7 @@ const configure = () => {
 
     if (UserService.isLoggedIn()) {
       const cb = () => {
-        config.headers.Authorization = `Bearer ${UserService.getAccess()}`;
+        config.headers.Authorization = `Bearer ${UserService.getToken()}`;
         //config.headers.Authorization = `Bearer ${UserService.accessToken()}`;
         return Promise.resolve(config);
       };

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { allRequests } from "../../modules/requests";
 import RolesRoute from "../RolesRoute";
+import { format } from 'date-fns'
 
 const ListOfRequestAdmin = () => {
   const dispatch = useDispatch();
@@ -45,8 +46,8 @@ const ListOfRequestAdmin = () => {
                 <td>
                   <Link to={`/requests/${req.id}`}>{req.title}</Link>
                 </td>
-                <td>{req.periodStart}</td>
-                <td>{req.periodEnd}</td>
+                <td >{format(new Date(req.periodStart), 'dd/MM/yyyy')}</td>
+                <td >{format(new Date(req.periodEnd), 'dd/MM/yyyy')}</td>
                 <td>{req.ownerName}</td>
                 <td
                   style={{

@@ -5,6 +5,7 @@ import { allRequests, deleteRequest } from "../../modules/requests";
 //import Ineligibleperiod from "./Ineligibleperiod"
 import CurrentUserRequest from "./CurrentUserRequest"
 import Element from "../Element";
+import { format } from 'date-fns'
 
 const ListOfRequests = () => {
   const dispatch = useDispatch();
@@ -38,8 +39,8 @@ const ListOfRequests = () => {
                 <td>
                   <Link to={`/requests/${req.id}`}>{req.title}</Link>
                 </td>
-                <td >{req.periodStart}</td>
-                <td>{req.periodEnd}</td>
+                <td >{format(new Date(req.periodStart), 'dd/MM/yyyy')}</td>
+                <td >{format(new Date(req.periodEnd), 'dd/MM/yyyy')}</td>
                 <td>{req.ownerName}</td>
                 <td style={{color: req.state === "Approved"  ? 'green' : req.state=== "Denied"? "red" : "black"}}>
                   {req.state}

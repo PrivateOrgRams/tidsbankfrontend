@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { allIneligiblePeriod, deleteIneligibleperiod } from "../../modules/ineligibleperiod";
 import RolesRoute from "../RolesRoute";
+import { format } from 'date-fns'
 
 const Test = () => {
 
@@ -28,10 +29,8 @@ const Test = () => {
           {ineligibleperiod.map((ineligibleperiod) => (
             <tr key={ineligibleperiod.id}>
               <td>{ineligibleperiod.id}</td>
-              <td>
-                {ineligibleperiod.start}
-              </td>
-              <td>{ineligibleperiod.end}</td>
+              <td >{format(new Date(ineligibleperiod.start), 'dd/MM/yyyy')}</td>
+              <td >{format(new Date(ineligibleperiod.end), 'dd/MM/yyyy')}</td>
               <td>
                 <RolesRoute  roles={['admin']}>
                 <button  className="btn btn-xs btn-danger" onClick={() => dispatch(deleteIneligibleperiod(ineligibleperiod))}>

@@ -13,6 +13,7 @@ import UserList from "../components/User/UserList";
 import   UserProfile from "../components/User/UserProfile";
 import UserDetails from "../components/User/UserDetails";
 import SettingList from '../components/Settings/SettingList';
+import Calendar from "../components/Calendar/Calendar"
 
 import '../components/App.css';
 
@@ -29,6 +30,10 @@ const Routes = () => (
 
       <Route path="/AddingRequest">
        <AddingRequest/>
+      </Route>
+
+      <Route path="/Calendar">
+       <Calendar/>
       </Route>
 
       <Route path="/requests/:requestId">

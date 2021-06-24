@@ -18,6 +18,11 @@ export const SidebarData = [
     icon: <IoIcons.IoIosPaper />,
   },
   {
+    title: "Calendar",
+    path: "/Calendar",
+    icon: <IoIcons.IoIosPaper />,
+  },
+  {
     title: "Profile",
     path: "/UserProfile",
     icon: <IoIcons.IoIosPaper />,
