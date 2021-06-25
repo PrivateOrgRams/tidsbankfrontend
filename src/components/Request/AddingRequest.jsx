@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { addRequest } from "../../modules/requests";
 import UserService from '../../services/UserService';
+import ShowIngiblP from '../IneligiblePeriod/ShowIngiblP'
 //import Ineligibleperiod from "./Ineligibleperiod"
 
 
@@ -26,6 +27,7 @@ const AddingRequest = () => {
 
   return (
     <div className="row">
+    <ShowIngiblP/>
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
           <h1>Request Vacation</h1>
@@ -45,7 +47,7 @@ const AddingRequest = () => {
           </div>
           <div className="form-group">
             <input  type="text" className="form-control" placeholder="Owner"
-                   value={ownerId} onChange={(e) => setOwnerId(UserService.getUsername)}/>
+                   value={ownerId} onChange={(e) => setOwnerId(UserService.getUsername())}/>
           </div>
             <button type="submit" className="btn btn-primary">Vocation Request</button>
         </form>
