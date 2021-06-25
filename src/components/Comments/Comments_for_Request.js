@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { allComments, deleteComment } from "../../modules/comment";
-import RolesRoute from "../RolesRoute";
+//import RolesRoute from "../RolesRoute";
 import UserService from "../../services/UserService";
 import AddComments from "./AddComments"
 
@@ -10,11 +10,11 @@ const CommentsforRequest = (  {dataParentToChild}) => {
 
   const dispatch = useDispatch();
   const { comment } = useSelector((state) => state);
- console.log(  {dataParentToChild})
+ //console.log(  {dataParentToChild})
   useEffect(() => {
     dispatch(allComments(dataParentToChild.id))
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
- console.log(comment)
+ //console.log(comment)
   return (
     <div className="row">
       <div className="col-sm-12">

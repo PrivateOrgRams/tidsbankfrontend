@@ -38,7 +38,7 @@ export const allIneligiblePeriod = () => ({
 
 //Post method
 export const addIneligibleperiod = ineligibleperiod => {
-    console.log(`${UserService.getUsername()} added the ineligibleperiod ${ineligibleperiod.id}`);
+   // console.log(`${UserService.getUsername()} added the ineligibleperiod ${ineligibleperiod.id}`);
     return {
         type: ADD_INELIGIBLEPERIOD,
         payload: {
@@ -52,7 +52,7 @@ export const addIneligibleperiod = ineligibleperiod => {
 };
 
 export const deleteIneligibleperiod = ineligibleperiod => {
-    console.log(`${UserService.getUsername()} deletes the ineligibleperiod ${ineligibleperiod.id}`);
+   // console.log(`${UserService.getUsername()} deletes the ineligibleperiod ${ineligibleperiod.id}`);
     return {
         type: DELETE_INELIGIBLEPERIOD,
         payload: {
@@ -66,13 +66,4 @@ export const deleteIneligibleperiod = ineligibleperiod => {
 };
 
 ////////////////////////////////////////////////////////////////
-export const changes = () => ({
 
-    type: LIST_INELIGIBLEPERIODS,
-    payload: {
-      request: {
-        url: 'https://localhost:5001/ineligible',
-
-      },
-    },
-  });

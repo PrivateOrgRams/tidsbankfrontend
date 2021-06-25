@@ -37,7 +37,7 @@ export const allSettings = () => ({
 });
 
 export const addSetting = setting => {
-    console.log(`${UserService.getUsername()} added the setting ${setting.userId}`);
+    //console.log(`${UserService.getUsername()} added the setting ${setting.userId}`);
     return {
         type: ADD_SETTING,
         payload: {
@@ -51,7 +51,7 @@ export const addSetting = setting => {
 };
 
 export const deleteSetting = setting => {
-    console.log(`${UserService.getUsername()} deletes the setting ${setting.userId}`);
+    //console.log(`${UserService.getUsername()} deletes the setting ${setting.userId}`);
     return {
         type: DELETE_SETTING,
         payload: {
@@ -66,13 +66,3 @@ export const deleteSetting = setting => {
 
 ////////////////////////////////////////////////////////////////
 
-export const changes = () => ({
-
-    type: LIST_SETTINGS,
-    payload: {
-      request: {
-        url: 'https://localhost:5001/Settings',
-
-      },
-    },
-  });

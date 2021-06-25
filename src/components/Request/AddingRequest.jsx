@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { addRequest } from "../../modules/requests";
@@ -27,7 +27,6 @@ const AddingRequest = () => {
 
   return (
     <div className="row">
-    <ShowIngiblP/>
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
           <h1>Request Vacation</h1>
@@ -53,6 +52,7 @@ const AddingRequest = () => {
         </form>
         {/* { UserService.hasRole(["admin"]) && <h1>I'm an Admin</h1> } */}
       </div>
+      <ShowIngiblP/>
     </div>
   );
 }

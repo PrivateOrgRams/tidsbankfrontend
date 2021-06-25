@@ -10,9 +10,9 @@ import { format } from 'date-fns'
 const CurrentUserRequest = () => {
   const dispatch = useDispatch();
   const { requests } = useSelector((state) => state);
-  console.log(requests)
+  //console.log(requests)
   let request =   requests.filter(z=>z.ownerId === UserService.getUsername())
-  console.log(request)
+  //console.log(request)
 
   useEffect(() => {
     dispatch(allRequests());

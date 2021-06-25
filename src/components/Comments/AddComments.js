@@ -13,7 +13,7 @@ const AddComments = (dataParentToChild) => {
   // const [UserId, setUserId] = useState('');
   // const [IsAdmin, setIsAdmin] = useState('');
 
-console.log(dataParentToChild.comentsId)
+//console.log(dataParentToChild.comentsId)
   const dispatch = useDispatch();
   const history = useHistory();
 

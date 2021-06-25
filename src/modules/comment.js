@@ -38,7 +38,7 @@ export const allComments = comment => ({
 
 
 export const addComment = comment => {console.log(comment.id)
-  console.log(`${UserService.getUsername()} added the user ${comment.id}`);
+ // console.log(`${UserService.getUsername()} added the user ${comment.id}`);
   return {
     type: ADD_COMMENT,
     payload: {

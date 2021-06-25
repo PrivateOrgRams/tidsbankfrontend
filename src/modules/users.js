@@ -1,6 +1,6 @@
 import { SUCCESS_SUFFIX } from "redux-axios-middleware";
 import HttpService from "../services/HttpService";
-import UserService from "../services/UserService";
+//import UserService from "../services/UserService";
 
 export const EDIT_USER = "EDIT_USER";
 export const LIST_USERS = 'LIST_USERS';
@@ -34,7 +34,7 @@ export const allUsers = () => ({
   },
 });
 export const addUser = user => {console.log(user.id)
-  console.log(`${UserService.getUsername()} added the user ${user.id}`);
+ // console.log(`${UserService.getUsername()} added the user ${user.id}`);
   return {
     type: ADD_USER,
     payload: {
@@ -62,7 +62,7 @@ export const addUser = user => {console.log(user.id)
 // };
 
 export const editUser = user => {console.log(user.id)
-  console.log(`${UserService.getUsername()} added the user ${user.id}`);
+ // console.log(`${UserService.getUsername()} added the user ${user.id}`);
   return {
     type: EDIT_USER,
     payload: {
@@ -91,7 +91,7 @@ export const editUser = user => {console.log(user.id)
 // };
 
 export const deleteUser = user => {
-  console.log(`${UserService.getUsername()} deletes the user ${user.id}`);
+ // console.log(`${UserService.getUsername()} deletes the user ${user.id}`);
   return {
     type: DELETE_USER,
     payload: {
@@ -103,14 +103,4 @@ export const deleteUser = user => {
     },
   }
 };
-////////////////////////////////////////////////////////////////
-export const changes = () => ({
 
-  type: LIST_USERS,
-  payload: {
-    request: {
-      url: 'https://localhost:5001/user',
-
-    },
-  },
-});

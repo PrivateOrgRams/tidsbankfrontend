@@ -11,7 +11,7 @@ const ListOfRequests = () => {
   const dispatch = useDispatch();
   const { requests } = useSelector((state) => state);
   let request =   requests.filter(z=>z.state !== "Pending" && z.state!=="Denied")
-
+  //console.log(request.Status+"jfhddddddddddddddddddddddd")
   useEffect(() => {
     dispatch(allRequests());
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

@@ -19,7 +19,7 @@ const UserForm = (user) => {
   const history = useHistory();
 
   const handleSubmit = (event) => {
-   console.log(event)
+  // console.log(event)
     event.preventDefault();
     dispatch(editUser({ Picture:"####", FirstName: FirstName, LastName: LastName, Email:Email, Id:UserService.getUsername() }))
       .then(() => history.push("/"))

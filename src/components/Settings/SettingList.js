@@ -7,7 +7,7 @@ const SettingList = () => {
 
   const dispatch = useDispatch();
   const { setting } = useSelector((state) => state);
-  console.log(setting)
+  //console.log(setting)
   useEffect(() => {
     dispatch(allSettings())
   }, []);
