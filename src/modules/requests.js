@@ -1,6 +1,6 @@
 import { SUCCESS_SUFFIX } from "redux-axios-middleware";
 import HttpService from "../services/HttpService";
-import UserService from "../services/UserService";
+//import UserService from "../services/UserService";
 const LIST_REQUESTS = 'LIST_REQUESTS';
 //const EDIT_COMMENT = 'EDIT_COMMENT';
 const ADD_REQUEST = 'ADD_REQUEST';
@@ -29,7 +29,7 @@ export const allRequests = () => ({
     type: LIST_REQUESTS,
     payload: {
         request: {
-            url: 'https://localhost:5001/Requests',
+            url: 'https://localhost:5001/request',
 
         },
     },
@@ -55,9 +55,9 @@ export const addRequest = request => {
       type: ADD_REQUEST,
       payload: {
           request: {
-              url: 'https://localhost:5001/Requests',
+              url: 'https://localhost:5001/request',
               method: HttpService.HttpMethods.POST,
-              data: request
+              data: request,
           },
       },
   }
@@ -69,13 +69,13 @@ export const addRequest = request => {
 
 
 export const deleteRequest = request => {
-    console.log(`${UserService.getUsername()} deletes the request ${request.id}`);
+   // console.log(`${UserService.getUsername()} deletes the request ${request.id}`);
     return {
         type: DELETE_REQUEST,
         payload: {
             request,
             request: {
-                url: `https://localhost:5001/Requests/${request.id}`,
+                url: `https://localhost:5001/request/${request.id}`,
                 method: HttpService.HttpMethods.DELETE,
             },
         },

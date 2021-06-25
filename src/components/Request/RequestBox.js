@@ -19,7 +19,7 @@ const RequestBox = () => (
       <ListOfRequests/>
       <AddInigiblP/>
       </Route>
-      <Route path="/requests/:requestId">
+      <Route path="/request/:requestId">
       <RequestDetails/>
       </Route>
       <RolesRoute path="/secret" roles={['admin']}>

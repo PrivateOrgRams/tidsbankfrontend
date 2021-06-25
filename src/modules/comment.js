@@ -30,7 +30,7 @@ export const allComments = comment => ({
     type: LIST_COMMENTS,
     payload: {
         request: {
-            url: `https://localhost:5001/comment/requests/${comment}`,
+            url: `https://localhost:5001/comment/request/${comment}`,
 
         },
     },

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { allRequests } from "../../modules/requests";
 import RolesRoute from "../RolesRoute";
 import { format } from 'date-fns'
+import UserService from "../../services/UserService";
 
 const ListOfRequestAdmin = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const ListOfRequestAdmin = () => {
     fetch("https://localhost:5001/stat/", {
       method: "POST",
       headers: { "Content-type": "application/json" },
-      body: JSON.stringify({ id: id, State: state }),
+      body: JSON.stringify({ id: id, State: state , ModeratorId : UserService.getUsername() }),
     });
     //  .then(response =>
     //   {console.log(response.status);  return response.json();}).then(data => console.log(data));
@@ -66,14 +67,14 @@ const ListOfRequestAdmin = () => {
                     <button
                       className="btn btn-xs btn-success"
                       // onClick={() => fetchDates(req.id, "Accept")}
-                      onClick={() => ChangeStatue(req.id, "Approved")}
+                      onClick={() => ChangeStatue(req.id, "Approved" )}
                     >
                       Accept
                     </button>
                     <span>| |</span>
                     <button
                       className="btn btn-xs btn-danger"
-                      onClick={() => ChangeStatue(req.id, "Denied")}
+                      onClick={() => ChangeStatue(req.id, "Denied" )}
                     >
                       Reject
                     </button>

@@ -1,6 +1,6 @@
 import { SUCCESS_SUFFIX } from "redux-axios-middleware";
 import HttpService from "../services/HttpService";
-import UserService from "../services/UserService";
+//import UserService from "../services/UserService";
 
 const LIST_INELIGIBLEPERIODS = 'LIST_INELIGIBLEPERIODS';
 //const EDIT_COMMENT = 'EDIT_COMMENT';
