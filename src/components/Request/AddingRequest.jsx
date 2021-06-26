@@ -22,7 +22,14 @@ const AddingRequest = () => {
       return;
     }
     dispatch(addRequest({title: title, periodStart:periodStart, periodEnd: periodEnd , ownerId: ownerId}))
-      .then(() => history.push("/"))
+      .then((status) =>{
+        if (status.payload.data.status===400) {
+           alert(status.payload.data.message)
+        } else {
+          history.push('./')
+        }})
+
+
   };
 
   return (

@@ -57,6 +57,13 @@ export const addRequest = request => {
           request: {
               url: 'https://localhost:5001/request',
               method: HttpService.HttpMethods.POST,
+              validateStatus: function (status) {
+                if (status===400) {
+                } else {
+                  return status
+                }
+               return status ; // default
+              },
               data: request,
           },
       },

@@ -45,6 +45,9 @@ export const addComment = comment => {console.log(comment.id)
       request: {
         url: 'https://localhost:5001/comment',
         method: HttpService.HttpMethods.POST,
+        validateStatus: function (status) {
+          return status >= 200 && status < 300; // default
+        },
         data: comment,
       },
     },
