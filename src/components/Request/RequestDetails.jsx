@@ -14,7 +14,7 @@ const RequestDetails = () => {
 
   useEffect(() => {
     dispatch(allRequests())
-  }, []);
+  }, []);    // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setRequest(requests.find(user => user.id === parseInt(requestId)))

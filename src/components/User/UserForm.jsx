@@ -24,7 +24,7 @@ const UserForm = () => {
       return;
     }
     dispatch(addUser({ FirstName: FirstName, LastName: LastName, Picture: Picture, Email:Email, Id }))
-      .then(() => history.push("/"))
+      .then(() => history.push("/UserList"))
 
   };
 
@@ -38,22 +38,22 @@ const UserForm = () => {
           <div className="form-group">
             <label htmlFor="id">id</label>
             <input type="text" className="form-control" placeholder="id"
-                   value={Id} onChange={(e) => setId(UserService.getUsername())}/>
+                   value={Id} onChange={(e) => setId(e.target.value)}/>
           </div>
           <div className="form-group">
             <label htmlFor="FirstName">First name</label>
             <input type="text" className="form-control" placeholder="First name"
-                   value={FirstName} onChange={(e) => setFirstName(UserService.getGivenName())}/>
+                   value={FirstName} onChange={(e) => setFirstName(e.target.value)}/>
           </div>
           <div className="form-group">
             <label htmlFor="setLastName">Last Name</label>
             <input type="text" className="form-control" placeholder="Last Name"
-                   value={LastName} onChange={(e) => setLastName(UserService.getGivenFName())}/>
+                   value={LastName} onChange={(e) => setLastName(e.target.value)}/>
           </div>
           <div className="form-group">
             <label htmlFor="Email">Email</label>
             <input type="text" className="form-control" placeholder="Email"
-                   value={Email} onChange={(e) => setEmail(UserService.email())}/>
+                   value={Email} onChange={(e) => setEmail(e.target.value)}/>
           </div>
 
           <div className="form-group">
