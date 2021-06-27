@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-//import { Link } from "react-router-dom";
 import { allComments } from "../../modules/comment";
 import UserService from "../../services/UserService";
 import AddComments from "./AddComments";

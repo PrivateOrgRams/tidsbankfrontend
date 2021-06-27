@@ -18,7 +18,6 @@ const RequestDetails = () => {
 
   useEffect(() => {
     setRequest(requests.find(user => user.id === parseInt(requestId)))
-    // setBook(books.find(user => book.id === parseInt(bookId, 10)))
   }, [requestId, requests]);
 
   return request ? (
@@ -45,5 +44,4 @@ const RequestDetails = () => {
     </div>
   ) : null
 }
-
 export default RequestDetails

@@ -7,9 +7,7 @@ import UserService from "../../services/UserService";
 const AddComments = (dataParentToChild) => {
   const [Message, setMessage] = useState("");
   const dispatch = useDispatch();
-  const history = useHistory();
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     if (!Message) {
       return;
     }
@@ -21,7 +19,7 @@ const AddComments = (dataParentToChild) => {
         UserId: UserService.getUsername(),
         RequestId: dataParentToChild.comentsId,
       })
-    ).then(() => history.push("/"));
+    )
   };
   return (
     <div className="row">
