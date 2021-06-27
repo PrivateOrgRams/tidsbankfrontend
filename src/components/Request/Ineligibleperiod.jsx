@@ -20,7 +20,7 @@ function Ineligibleperiod(props) {
   useEffect(() => {
     dispatch(allIneligiblePeriod());
     fetchDates();
-  }, []);
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   const handleDayClick = (day) => {
     const range = DateUtils.addDayToRange(day, counter);
@@ -52,7 +52,7 @@ function Ineligibleperiod(props) {
     setTimeout(() => {
       fetchDates();
     }, 10);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const { from, to } = counter;
   const modifiers = { start: from, end: to };

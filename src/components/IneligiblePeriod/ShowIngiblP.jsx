@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import Helmet from "react-helmet";
 import DayPicker, { DateUtils } from "react-day-picker";
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 import "react-day-picker/lib/style.css";
-import { useDispatch, useSelector} from "react-redux";
-import {allIneligiblePeriod} from "../../modules/ineligibleperiod"
+import { useDispatch, useSelector } from "react-redux";
+import { allIneligiblePeriod } from "../../modules/ineligibleperiod";
 const getInitialState = () => {
   return {
     from: undefined,
@@ -16,10 +16,7 @@ function ShowineligibleperiodAndSelectedDate(props) {
   const { ineligibleperiod } = useSelector((state) => state);
   const [counter, setState] = useState(new Date());
   const [disableDateRange, setDisableDateRange] = useState([]);
-  useEffect(() => {
-    dispatch(allIneligiblePeriod());
-    fetchDates();
-  }, []);
+
 
   const handleDayClick = (day) => {
     const range = DateUtils.addDayToRange(day, counter);
@@ -43,16 +40,14 @@ function ShowineligibleperiodAndSelectedDate(props) {
     });
     setDisableDateRange(disabledDates);
   };
-  // setTimeout(() => {
-  //   fetchDates();
-  // }, 10);
 
   useEffect(() => {
-    setTimeout(() => {
-      fetchDates();
-    }, 100);
-  }, []);
+    dispatch(allIneligiblePeriod());
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  setTimeout(() => {
+    fetchDates();
+  }, 10);
   const { from, to } = counter;
   const modifiers = { start: from, end: to };
 

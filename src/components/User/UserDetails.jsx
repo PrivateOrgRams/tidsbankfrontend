@@ -13,22 +13,11 @@ const UserDetails = () => {
 
   useEffect(() => {
     dispatch(allUsers());
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setUser(users.find((user) => user.id === userId));
   }, [userId, users]);
-
-  //   const ChangeStatue = async ( id , state) => {
-  //     fetch("https://localhost:5001/api/Status/Status/",
-  //    {  method: "POST",
-  //    headers: {"Content-type": "application/json"},
-  //     body: JSON.stringify({id : id, State: state })})
-  //    //  .then(response =>
-  //    //   {console.log(response.status);  return response.json();}).then(data => console.log(data));
-  //    //   console.log(dates)
-  //  };
-
   return user ? (
     <div className="row">
       <div className="col-sm-12">

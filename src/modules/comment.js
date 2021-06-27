@@ -3,12 +3,8 @@ import HttpService from "../services/HttpService";
 import UserService from "../services/UserService";
 
 const LIST_COMMENTS = 'LIST_COMMENTS';
-//const EDIT_COMMENT = 'EDIT_COMMENT';
 const ADD_COMMENT = 'ADD_COMMENT';
 const DELETE_COMMENT = 'DELETE_COMMENT';
-//const SINGLE_COMMENT = 'SINGLE_COMMENT';
-
-
 const commentReducer = (state = [], action) => {
     switch (action.type) {
 
@@ -22,15 +18,15 @@ const commentReducer = (state = [], action) => {
             return state;
     }
 };
-
 export default commentReducer;
-
 export const allComments = comment => ({
-
     type: LIST_COMMENTS,
     payload: {
         request: {
             url: `https://localhost:5001/comment/request/${comment}`,
+            validateStatus: function (status) {
+              return status
+            },
 
         },
     },
@@ -38,7 +34,6 @@ export const allComments = comment => ({
 
 
 export const addComment = comment => {console.log(comment.id)
- // console.log(`${UserService.getUsername()} added the user ${comment.id}`);
   return {
     type: ADD_COMMENT,
     payload: {
@@ -46,7 +41,7 @@ export const addComment = comment => {console.log(comment.id)
         url: 'https://localhost:5001/comment',
         method: HttpService.HttpMethods.POST,
         validateStatus: function (status) {
-          return status >= 200 && status < 300; // default
+          return status
         },
         data: comment,
       },
@@ -64,20 +59,10 @@ export const deleteComment = comment => {
             request: {
                 url: `https://localhost:5001/comment/requests/${comment.id}`,
                 method: HttpService.HttpMethods.DELETE,
+                validateStatus: function (status) {
+                  return status
+                },
             },
         },
     }
 };
-
-
-////////////////////////////////////////////////////////////////
-export const changes = () => ({
-
-    type: LIST_COMMENTS,
-    payload: {
-      request: {
-        url: 'https://localhost:5001/comment',
-
-      },
-    },
-  });

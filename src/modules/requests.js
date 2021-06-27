@@ -1,13 +1,8 @@
 import { SUCCESS_SUFFIX } from "redux-axios-middleware";
 import HttpService from "../services/HttpService";
-//import UserService from "../services/UserService";
 const LIST_REQUESTS = 'LIST_REQUESTS';
-//const EDIT_COMMENT = 'EDIT_COMMENT';
 const ADD_REQUEST = 'ADD_REQUEST';
 const DELETE_REQUEST = 'DELETE_REQUEST';
-//const SINGLE_COMMENT = 'SINGLE_COMMENT';
-
-
 const requestReducer = (state = [], action) => {
     switch (action.type) {
 
@@ -30,26 +25,13 @@ export const allRequests = () => ({
     payload: {
         request: {
             url: 'https://localhost:5001/request',
+            validateStatus: function (status) {
+              return status
+            },
 
         },
     },
 });
-
-// export const addRequest = request => {
-//     console.log(`${UserService.getUsername()} added the request ${request.id}`);
-//     return {
-//         type: ADD_REQUEST,
-//         payload: {
-//             request: {
-//                 url: 'https://localhost:5001/Requests',
-//                 method: HttpService.HttpMethods.POST,
-//                 data: request,
-//             },
-//         },
-//     }
-// };
-
-
 export const addRequest = request => {
   return {
       type: ADD_REQUEST,
@@ -58,11 +40,7 @@ export const addRequest = request => {
               url: 'https://localhost:5001/request',
               method: HttpService.HttpMethods.POST,
               validateStatus: function (status) {
-                if (status===400) {
-                } else {
-                  return status
-                }
-               return status ; // default
+                return status
               },
               data: request,
           },

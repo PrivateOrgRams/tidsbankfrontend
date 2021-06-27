@@ -13,7 +13,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     dispatch(allUsers());
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setUser(users.find((user) => user.id === UserService.getUsername()));

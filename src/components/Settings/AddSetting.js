@@ -1,29 +1,20 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
-import { allUsers,addSetting } from "../../modules/setting";
-import UserService from '../../services/UserService';
-
-
+import { addSetting } from "../../modules/setting";
 
 const AddSetting = () => {
   const [userid, setUserId] = useState('');
-
   const [maxvacationlength, setMaxVacationLength] = useState('');
-
-
   const dispatch = useDispatch();
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
-
     dispatch(addSetting({userid: userid, maxvacationlength:maxvacationlength}))
       .then(() => history.push("/settinglist"))
   };
-
   return (
     <div className="row">
-
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
           <h1>Add Max Vacation Days</h1>
@@ -45,5 +36,4 @@ const AddSetting = () => {
     </div>
   );
 }
-
 export default AddSetting

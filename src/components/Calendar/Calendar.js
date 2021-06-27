@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import EventCalendar from './EventCalendar';
 
@@ -10,7 +8,6 @@ function Calendar(props) {
     </div>
   );
 }
-
 export default Calendar;
 
 

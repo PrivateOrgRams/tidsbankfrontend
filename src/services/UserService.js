@@ -55,7 +55,4 @@ const UserService = {
   email,
   getTokenParsed
 };
-////////////////////////////////////////////////////////////////
-
-
 export default UserService;

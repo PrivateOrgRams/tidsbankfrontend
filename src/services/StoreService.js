@@ -15,14 +15,10 @@ const setup = () => {
   if (process.env.NODE_ENV === 'development') {
     enhancers.push(applyMiddleware(logger));
   }
-
   const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers);
-
   return createStore(rootReducer, composedEnhancers);
 };
-
 const StoreService = {
   setup,
 };
-
 export default StoreService;
