@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { allRequests } from "../../modules/requests";
 import  CommentsforRequest from "../Comments/Comments_for_Request"
+import { format } from "date-fns";
 
 
 const RequestDetails = () => {
@@ -23,17 +24,16 @@ const RequestDetails = () => {
   return request ? (
     <div className="row">
       <div className="col-sm-12">
-      <h3>Id  :{request.id}</h3>
         <h3>Title :   {request.title}</h3>
         <hr/>
         <p>Period Start</p>
-        <p className="lead">{request.periodStart}</p>
+        <h3>{format(new Date(request.periodStart), "dd/MM/yyyy")}</h3>
         <p>Period End</p>
-        <p className="lead">{request.periodEnd}</p>
+        <h3>{format(new Date(request.periodEnd), "dd/MM/yyyy")}</h3>
         <p>Status</p>
         <p className="lead">{request.state }</p>
         <p>Moderated At</p>
-        <p className="lead">{request.moderatedAt}</p>
+        <h3>{format(new Date(request.moderatedAt), "dd/MM/yyyy")}</h3>
         <hr/>
       </div>
       <CommentsforRequest dataParentToChild = {request}/>

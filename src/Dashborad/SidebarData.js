@@ -37,6 +37,7 @@ export const SidebarData = [
 ];
 
 export const SidebarDataAdmin = [
+
   {
     title: "Admin",
     path: "/AddInigiblP",

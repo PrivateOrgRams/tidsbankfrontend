@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import UserService from "../services/UserService";
 
+
 const Menu = () => (
   <nav className="navbar navbar-default">
     <div className="container-fluid">

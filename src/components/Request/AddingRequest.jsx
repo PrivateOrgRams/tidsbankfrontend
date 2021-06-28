@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useState} from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { addRequest } from "../../modules/requests";
-import UserService from "../../services/UserService";
-import ShowIngiblP from "../IneligiblePeriod/ShowIngiblP";
+import UserService from '../../services/UserService';
+import ShowIngiblP from '../IneligiblePeriod/ShowIngiblP'
 const AddingRequest = () => {
-  const [title, setTitle] = useState("");
-  const [periodStart, setPeriodStart] = useState("");
-  const [periodEnd, setPeriodEnd] = useState("");
-  const [ownerId, setOwnerId] = useState("");
+  const [title, setTitle] = useState('');
+  const [periodStart, setPeriodStart] = useState('');
+  const [periodEnd, setPeriodEnd] = useState('');
+  const [ownerId, setOwnerId] = useState('');
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -18,20 +18,13 @@ const AddingRequest = () => {
     if (!periodStart || !periodEnd) {
       return;
     }
-    dispatch(
-      addRequest({
-        title: title,
-        periodStart: periodStart,
-        periodEnd: periodEnd,
-        ownerId: ownerId,
-      })
-    ).then((status) => {
-      if (status.payload.data.status === 400) {
-        alert(status.payload.data.errors.State);
-      } else {
-        history.push("./");
-      }
-    });
+    dispatch(addRequest({title: title, periodStart:periodStart, periodEnd: periodEnd , ownerId: ownerId}))
+      .then((status) =>{
+        if (status.payload.data.status===400) {
+           alert(status.payload.data.errors.State)
+        } else {
+          history.push('./')
+        }})
   };
 
   return (
@@ -40,53 +33,30 @@ const AddingRequest = () => {
         <form onSubmit={handleSubmit}>
           <h1>Request Vacation</h1>
           <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
+            <input  type="text"  className="form-control" placeholder="title"
+                   value={title} onChange={(e) => setTitle(e.target.value)}/>
           </div>
           <div className="form-group">
             <label htmlFor="start">periodStart</label>
-            <input
-              visible="false"
-              type="Date"
-              className="form-control"
-              placeholder="periodStart"
-              value={periodStart}
-              onChange={(e) => setPeriodStart(e.target.value)}
-            />
+            <input visible="false" type="Date" className="form-control" placeholder="periodStart"
+                   value={periodStart} onChange={(e) => setPeriodStart(e.target.value)}/>
           </div>
           <div className="form-group">
             <label htmlFor="end">end </label>
-            <input
-              type="Date"
-              className="form-control"
-              placeholder="periodEnd"
-              value={periodEnd}
-              onChange={(e) => setPeriodEnd(e.target.value)}
-            />
+            <input type="Date" className="form-control" placeholder="periodEnd"
+                   value={periodEnd} onChange={(e) => setPeriodEnd(e.target.value)}/>
           </div>
           <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Owner"
-              value={ownerId}
-              onChange={(e) => setOwnerId(UserService.getUsername())}
-            />
+            <input  type="text" className="form-control" placeholder="Owner"
+                   value={ownerId} onChange={(e) => setOwnerId(UserService.getUsername())}/>
           </div>
-          <button type="submit" className="btn btn-primary">
-            Vocation Request
-          </button>
+            <button type="submit" className="btn btn-primary">Vocation Request</button>
         </form>
         {/* { UserService.hasRole(["admin"]) && <h1>I'm an Admin</h1> } */}
       </div>
-      <ShowIngiblP />
+      <ShowIngiblP/>
     </div>
   );
-};
+}
 
-export default AddingRequest;
+export default AddingRequest

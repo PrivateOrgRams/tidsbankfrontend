@@ -24,7 +24,7 @@ const UserForm = () => {
       return;
     }
     dispatch(addUser({ FirstName: FirstName, LastName: LastName, Picture: Picture, Email:Email, Id }))
-      .then(() => history.push("/UserList"))
+      .then(() => history.push("/"))
 
   };
 

@@ -18,7 +18,8 @@ const EventCalendar = () => {
     const Events = dates.map((date) => {
       const start = date.periodStart;
       const end = date.periodEnd;
-      const title = date.title;
+
+      const user = date.ownerName;
       const ColorCode =
         "rgb(" +
         Math.floor(Math.random() * 100) +
@@ -30,7 +31,7 @@ const EventCalendar = () => {
       return {
         start: start, // start
         end: end, // end
-        title: title,
+        title:   user,
         backgroundColor: ColorCode,
       };
     });

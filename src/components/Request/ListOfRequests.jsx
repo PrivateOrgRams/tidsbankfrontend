@@ -26,7 +26,6 @@ const ListOfRequests = () => {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Title</th>
               <th>Start Date</th>
               <th>End Date</th>
@@ -37,7 +36,6 @@ const ListOfRequests = () => {
           <tbody>
             {request.map((req) => (
               <tr key={req.id}>
-                <td>{req.id}</td>
                 <td>
                   <Link to={`/requests/${req.id}`}>{req.title}</Link>
                 </td>

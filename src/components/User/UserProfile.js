@@ -27,15 +27,18 @@ const UserProfile = () => {
         <hr />
         <h3> Name :&nbsp;&nbsp; {user.firstName}</h3>
         <h3>Title : &nbsp;&nbsp; {user.lastName}</h3>
-        <h3>Email : &nbsp;&nbsp; {user.email}</h3>
         <hr />
         <p>
-          <Link to="/">&laquo; back to list</Link>
+
         </p>
       </div>
       <Edituser user = {user}/>
+      <span></span>
+      <Link to="/">&laquo; back to list</Link>
     </div>
+
   ) : null;
+
 };
 
 export default UserProfile;

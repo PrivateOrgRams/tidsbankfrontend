@@ -13,12 +13,11 @@ const CommentsforRequest = ({ dataParentToChild }) => {
   return (
     <div className="row">
       <div className="col-sm-12">
-        <h6>{UserService.getUsername()}</h6>
+        {/* <h6>{UserService.getUsername()}</h6> */}
         <h1>comments</h1>
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Name</th>
               <th>Message</th>
             </tr>
@@ -26,7 +25,6 @@ const CommentsforRequest = ({ dataParentToChild }) => {
           <tbody>
             {comment.map((user) => (
               <tr key={user.id}>
-                <td>{user.id}</td>
                 <td>{user.userName}</td>
                 <td>
                   <p>{user.myMessage}</p>

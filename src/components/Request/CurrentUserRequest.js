@@ -10,9 +10,7 @@ import { format } from "date-fns";
 const CurrentUserRequest = () => {
   const dispatch = useDispatch();
   const { requests } = useSelector((state) => state);
-  //console.log(requests)
   let request = requests.filter((z) => z.ownerId === UserService.getUsername());
-  //console.log(request)
 
   useEffect(() => {
     dispatch(allRequests());
@@ -28,7 +26,6 @@ const CurrentUserRequest = () => {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Title</th>
               <th>Start Date</th>
               <th>End Date</th>
@@ -39,7 +36,6 @@ const CurrentUserRequest = () => {
           <tbody>
             {request.map((req) => (
               <tr key={req.id}>
-                <td>{req.id}</td>
                 <td>
                   <Link to={`/requests/${req.id}`}>{req.title}</Link>
                 </td>

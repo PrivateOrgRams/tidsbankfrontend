@@ -34,11 +34,6 @@ const UserForm = (user) => {
             <input type="text" className="form-control" placeholder="Last Name"
                    value={LastName} onChange={(e) => setLastName(e.target.value)}/>
           </div>
-          <div className="form-group">
-            <label htmlFor="Email">Email</label>
-            <input type="text" className="form-control" placeholder="Email"
-                   value={Email} onChange={(e) => setEmail(e.target.value)} />
-          </div>
             <button type="submit" className="btn btn-primary" >Edit Profile</button>
         </form> }
         {/* { UserService.hasRole(["admin"]) && <h1>I'm an Admin</h1> } */}
