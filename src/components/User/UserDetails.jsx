@@ -21,7 +21,6 @@ const UserDetails = () => {
   return user ? (
     <div className="row">
       <div className="col-sm-12">
-        <h1>Details for user ID:  {user.id}</h1>
         <hr />
         <h3>Empolyee :</h3>
         <p className="lead">{user.firstName}</p>

@@ -15,7 +15,6 @@ const SettingList = () => {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>Id</th>
               <th>MaxVacationLength</th>
               <th>UserId</th>
             </tr>
@@ -23,7 +22,6 @@ const SettingList = () => {
           <tbody>
             {setting.map((st) => (
               <tr key={st.id}>
-                <td>{st.id}</td>
                 <td>{st.maxVacationLength}</td>
                 <td>{st.userId}</td>
                 <td>

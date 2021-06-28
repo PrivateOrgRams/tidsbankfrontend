@@ -6,6 +6,7 @@ import CurrentUserRequest from "./CurrentUserRequest";
 import Element from "../Element";
 import { format } from "date-fns";
 
+
 const ListOfRequests = () => {
   const dispatch = useDispatch();
   const { requests } = useSelector((state) => state);
@@ -15,7 +16,6 @@ const ListOfRequests = () => {
   useEffect(() => {
     dispatch(allRequests());
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
   return (
     <div className="row">
       <div>

@@ -7,15 +7,19 @@ import UserService from "../../services/UserService";
 const UserForm = (user) => {
   const [FirstName, setFirstName] = useState(user.user.firstName);
   const [LastName, setLastName] = useState(user.user.lastName);
-  const [Email, setEmail] = useState(user.user.email);
+
+
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleSubmit = (event) => {
+  // console.log(event)
     event.preventDefault();
-    dispatch(editUser({ Picture:"####", FirstName: FirstName, LastName: LastName, Email:Email, Id:UserService.getUsername() }))
+    dispatch(editUser({ Picture:"####", FirstName: FirstName, LastName: LastName, Id:UserService.getUsername() }))
       .then(() => history.push("/"))
+
   };
+
   return (
     <div className="row">
 

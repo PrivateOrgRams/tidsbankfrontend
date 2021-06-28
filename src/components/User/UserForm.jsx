@@ -23,7 +23,7 @@ const UserForm = () => {
     if (!FirstName || !LastName) {
       return;
     }
-    dispatch(addUser({ FirstName: FirstName, LastName: LastName, Picture: Picture, Email:Email, Id }))
+    dispatch(addUser({ FirstName: FirstName, LastName: LastName, Picture: Picture, Email:Id, Id:Id }))
       .then(() => history.push("/"))
 
   };
@@ -50,11 +50,7 @@ const UserForm = () => {
             <input type="text" className="form-control" placeholder="Last Name"
                    value={LastName} onChange={(e) => setLastName(e.target.value)}/>
           </div>
-          <div className="form-group">
-            <label htmlFor="Email">Email</label>
-            <input type="text" className="form-control" placeholder="Email"
-                   value={Email} onChange={(e) => setEmail(e.target.value)}/>
-          </div>
+
 
           <div className="form-group">
             <label htmlFor="Picture">Picture</label>
