@@ -24,7 +24,7 @@ export const allIneligiblePeriod = () => ({
     type: LIST_INELIGIBLEPERIODS,
     payload: {
         request: {
-            url: 'https://localhost:5001/ineligible',
+            url: 'https://tidsbankapi.azurewebsites.net/ineligible',
         },
     },
 });
@@ -34,7 +34,7 @@ export const addIneligibleperiod = ineligibleperiod => {
         type: ADD_INELIGIBLEPERIOD,
         payload: {
             request: {
-                url: 'https://localhost:5001/ineligible',
+                url: 'https://tidsbankapi.azurewebsites.net/ineligible',
                 method: HttpService.HttpMethods.POST,
                 validateStatus: function (status) {
                   return status
@@ -51,7 +51,7 @@ export const deleteIneligibleperiod = ineligibleperiod => {
         payload: {
             ineligibleperiod,
             request: {
-                url: `https://localhost:5001/ineligible/${ineligibleperiod.id}`,
+                url: `https://tidsbankapi.azurewebsites.net/${ineligibleperiod.id}`,
                 method: HttpService.HttpMethods.DELETE,
                 validateStatus: function (status) {
                   return status
