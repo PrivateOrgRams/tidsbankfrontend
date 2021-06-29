@@ -21,12 +21,12 @@ const AddSetting = () => {
 
           <div className="form-group">
           <label htmlFor="start">UserId</label>
-            <input visible="false" type="" className="form-control" placeholder="email"
+            <input visible="false" type="email" className="form-control" placeholder="email"
                    value={userid} onChange={(e) => setUserId(e.target.value)}/>
           </div>
           <div className="form-group">
             <label htmlFor="start">MaxVacationLength</label>
-            <input visible="false" type="number" min="1" max="90" className="form-control" placeholder="MaxVacationLength"
+            <input visible="false" type="number" pattern="[0-9]" min="1" max="90" className="form-control" placeholder="number"
                    value={maxvacationlength} onChange={(e) => setMaxVacationLength(e.target.value)}/>
           </div>
             <button type="submit" className="btn btn-primary">Create</button>

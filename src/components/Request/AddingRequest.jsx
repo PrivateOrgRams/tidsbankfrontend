@@ -47,7 +47,7 @@ const AddingRequest = () => {
                    value={periodEnd} onChange={(e) => setPeriodEnd(e.target.value)}/>
           </div>
           <div className="form-group">
-            <input  type="text" className="form-control" placeholder="Owner"
+            <input  type="Email" className="form-control" placeholder="Email"
                    value={ownerId} onChange={(e) => setOwnerId(UserService.getUsername())}/>
           </div>
             <button type="submit" className="btn btn-primary">Vocation Request</button>

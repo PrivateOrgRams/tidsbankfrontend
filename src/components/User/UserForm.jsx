@@ -36,8 +36,8 @@ const UserForm = () => {
         <form onSubmit={handleSubmit}>
           <h1>Add New User:</h1>
           <div className="form-group">
-            <label htmlFor="id">id</label>
-            <input type="text" className="form-control" placeholder="id"
+            <label htmlFor="Email">id</label>
+            <input type="Email" className="form-control" placeholder="Email"
                    value={Id} onChange={(e) => setId(e.target.value)}/>
           </div>
           <div className="form-group">
