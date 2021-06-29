@@ -24,7 +24,7 @@ export const allRequests = () => ({
     type: LIST_REQUESTS,
     payload: {
         request: {
-            url: 'https://localhost:5001/request',
+            url: 'https://tidsbankapi.azurewebsites.net/request',
             validateStatus: function (status) {
               return status
             },
@@ -37,7 +37,7 @@ export const addRequest = request => {
       type: ADD_REQUEST,
       payload: {
           request: {
-              url: 'https://localhost:5001/request',
+              url: 'https://tidsbankapi.azurewebsites.net/request',
               method: HttpService.HttpMethods.POST,
               validateStatus: function (status) {
                 return status
@@ -60,7 +60,7 @@ export const deleteRequest = request => {
         payload: {
             request,
             request: {
-                url: `https://localhost:5001/request/${request.id}`,
+                url: `https://tidsbankapi.azurewebsites.net/request/${request.id}`,
                 method: HttpService.HttpMethods.DELETE,
             },
         },

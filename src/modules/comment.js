@@ -23,7 +23,7 @@ export const allComments = comment => ({
     type: LIST_COMMENTS,
     payload: {
         request: {
-            url: `https://localhost:5001/comment/request/${comment}`,
+            url: `https://tidsbankapi.azurewebsites.net/comment/request/${comment}`,
             validateStatus: function (status) {
               return status
             },
@@ -38,7 +38,7 @@ export const addComment = comment => {console.log(comment.id)
     type: ADD_COMMENT,
     payload: {
       request: {
-        url: 'https://localhost:5001/comment',
+        url: 'https://tidsbankapi.azurewebsites.net/comment',
         method: HttpService.HttpMethods.POST,
         validateStatus: function (status) {
           return status
@@ -57,7 +57,7 @@ export const deleteComment = comment => {
         payload: {
             comment,
             request: {
-                url: `https://localhost:5001/comment/requests/${comment.id}`,
+                url: `https://tidsbankapi.azurewebsites.net/comment/requests/${comment.id}`,
                 method: HttpService.HttpMethods.DELETE,
                 validateStatus: function (status) {
                   return status

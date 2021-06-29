@@ -21,7 +21,7 @@ export const allUsers = () => ({
   type: LIST_USERS,
   payload: {
     request: {
-      url: "https://localhost:5001/user",
+      url: "https://tidsbankapi.azurewebsites.net/user",
       validateStatus: function (status) {
         return status
       },
@@ -34,7 +34,7 @@ export const addUser = (user) => {
     type: ADD_USER,
     payload: {
       request: {
-        url: "https://localhost:5001/user",
+        url: "https://tidsbankapi.azurewebsites.net/user",
         method: HttpService.HttpMethods.POST,
         validateStatus: function (status) {
           return status
@@ -50,7 +50,7 @@ export const editUser = (user) => {
     type: EDIT_USER,
     payload: {
       request: {
-        url: "https://localhost:5001/user",
+        url: "https://tidsbankapi.azurewebsites.net/user",
         method: HttpService.HttpMethods.PATCH,
         validateStatus: function (status) {
           return status
@@ -67,7 +67,7 @@ export const deleteUser = (user) => {
     payload: {
       user,
       request: {
-        url: `https://localhost:5001/user/${user.id}`,
+        url: `https://tidsbankapi.azurewebsites.net/${user.id}`,
         method: HttpService.HttpMethods.DELETE,
         validateStatus: function (status) {
           return status

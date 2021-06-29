@@ -23,7 +23,7 @@ export const allSettings = () => ({
   type: LIST_SETTINGS,
   payload: {
     request: {
-      url: "https://localhost:5001/setting",
+      url: "https://tidsbankapi.azurewebsites.net/setting",
     },
   },
 });
@@ -33,7 +33,7 @@ export const addSetting = (setting) => {
     type: ADD_SETTING,
     payload: {
       request: {
-        url: "https://localhost:5001/setting",
+        url: "https://tidsbankapi.azurewebsites.net/setting",
         method: HttpService.HttpMethods.POST,
         validateStatus: function (status) {
           return status
@@ -51,7 +51,7 @@ export const deleteSetting = (setting) => {
     payload: {
       setting,
       request: {
-        url: `https://localhost:5001/setting/${setting.userId}`,
+        url: `https://tidsbankapi.azurewebsites.net/setting/${setting.userId}`,
         method: HttpService.HttpMethods.DELETE,
         validateStatus: function (status) {
           return status
