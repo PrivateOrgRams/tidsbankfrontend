@@ -24,3 +24,4 @@ yarn-error.log*
 .idea
 *.iml
 .eslintcache
+node_modules
